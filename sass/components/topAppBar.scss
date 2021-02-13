@@ -1,0 +1,56 @@
+header {
+    
+    &.top-app-bar {
+
+        @include prefix((
+            box-shadow: inset 0 -1px 0 0 #dadce0,
+            transition: box-shadow 250ms
+        ), webkit moz);
+        
+        &.elevated {
+            @include box-shadow(
+                0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 20%)
+            );
+        }
+
+        .wrapper {
+            height: 48px;
+            padding: 8px;
+
+            span.brand {
+                color: #5f6368;
+                font-family: 'Product Sans',Arial,sans-serif;
+                font-size: 22px;
+                display: inline-block;
+                margin: 10px 16px;
+                vertical-align: top; 
+            }
+
+            .left {
+                display: inline-block;
+            }
+
+            .toolbar {
+                float: right;
+
+                .btn {
+                    color: #5f6368;
+                }
+            }
+        }
+
+        &.colored {
+            background: var(--color-primary);
+
+            span.brand {
+                color: #fff;
+            }
+
+            .btn i {
+                color: #fff;
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,11 @@
+@import url('http://fonts.cdnfonts.com/css/google-sans');
+
+body {
+
+    font-family: 'Product Sans Light', sans-serif;
+
+    @include headings {
+        font-family: 'Product Sans', sans-serif;
+    }
+
+}
