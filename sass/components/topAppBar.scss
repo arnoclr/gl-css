@@ -19,7 +19,7 @@ header {
 
             span.brand {
                 color: #5f6368;
-                font-family: 'Product Sans',Arial,sans-serif;
+                @include font('Google Sans');
                 font-size: 22px;
                 display: inline-block;
                 margin: 10px 16px;
@@ -32,10 +32,10 @@ header {
 
             .toolbar {
                 float: right;
+            }
 
-                .btn {
-                    color: #5f6368;
-                }
+            .btn {
+                color: #5f6368;
             }
         }
 

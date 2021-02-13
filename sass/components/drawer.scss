@@ -1,0 +1,49 @@
+main {
+    margin-left: 0;
+    transition: margin-left 0.4s ease-in-out;
+
+    &.with-drawer {
+        margin-left: 280px;
+    }
+
+    &.padding {
+        padding: 8px;
+    }
+}
+
+aside.drawer {
+    width: 280px;
+    padding-top: 8px;
+    float: left;
+
+    .item {
+        height: 48px;
+        padding-left: 12px;
+        cursor: pointer;
+        @include prefix((border-radius: 0 25px 25px 0), webkit);
+
+        i {
+            width: 24px;
+            height: 24px;
+            font-size: 24px;
+            margin: 12px;
+        }
+
+        span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-left: 20px;
+            vertical-align: super;
+            @include font('Google Sans')
+        }
+        
+        &.active {
+            background: var(--color-secondary);
+        }
+
+        &:not(.active):hover {
+            background: rgb(0 0 0 / 8%);
+        }
+    }
+}

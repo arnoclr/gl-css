@@ -9,3 +9,7 @@ body {
     }
 
 }
+
+@mixin font($family) {
+    font-family: $family, Arial, Helvetica, sans-serif;
+}
