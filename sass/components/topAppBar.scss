@@ -2,6 +2,8 @@ header {
     
     &.top-app-bar {
 
+        z-index: 7;
+
         @include prefix((
             box-shadow: inset 0 -1px 0 0 #dadce0,
             transition: box-shadow 250ms

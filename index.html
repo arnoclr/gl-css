@@ -8,16 +8,25 @@
     <title>gl-css demo</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="build/gl.css">
-    <script defer src="build/gl.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.css">
+    <script defer src="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.js"></script>
 </head>
 
 <body>
 
+    <aside class="modal js-modal-closable" id="modal1">
+        <div class="content">
+            <p>loading ...</p>
+            <div class="loader circular"></div>
+            <a href="#!" class="btn text secondary small js-modal-close">close</a>
+        </div>
+    </aside>
+
     <header class="top-app-bar elevated colored">
         <div class="wrapper">
             <div class="left">
-                <button class="btn icon"><i class="material-icons">menu</i></button>
+                <button class="btn icon js-drawer-trigger"><i class="material-icons">menu</i></button>
             </div>
             <span class="brand">gl css</span>
             <div class="toolbar">
@@ -26,20 +35,43 @@
         </div>
     </header>
 
-    <aside class="drawer">
-        <div role="button" class="item active">
+    <aside class="drawer open">
+        <div role="button" class="item active" onclick="path('guide/intro')">
             <i class="material-icons">lightbulb</i>
-            <span>Notes</span>
+            <span>Introduction</span>
         </div>
-        <div role="button" class="item">
-            <i class="material-icons">notifications</i>
-            <span>Rappels</span>
+        <div role="button" class="item" onclick="path('guide/quickstart')">
+            <i class="material-icons">download</i>
+            <span>Get Started</span>
         </div>
+        <hr>
+        <div role="button" class="item" onclick="path('theme/colors')">
+            <i class="material-icons">palette</i>
+            <span>Colors</span>
+        </div>
+        <div role="button" class="item" onclick="path('components/top-app-bar')">
+            <i class="material-icons" style="transform: rotate(180deg);">call_to_action</i>
+            <span>Top App Bar</span>
+        </div>
+        <a href="#!" class="bottom">Licences Open Source</a>
     </aside>
 
-    <main class="with-drawer padding">
+    <main class="padding">
 
-        <div class="row">
+        <div id="guide-intro" class="row page">
+
+        </div>
+
+        <div id="guide-quickstart" class="row page">
+            <div class="card elevated">
+                <pre class="prettyprint">
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.css&quot;&gt;
+&lt;script defer src=&quot;https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.js&quot;&gt;&lt;/script&gt;
+                </pre>
+            </div>
+        </div>
+
+        <div id="theme-colors" class="row page">
             <div class="col s12">
                 <div class="card outlined">
                     <h1>Hello World !</h1>
@@ -48,12 +80,50 @@
                         obcaecati nobis ab sit iste eos provident illum ex laboriosam, fuga autem exercitationem vero
                         totam at
                         incidunt?</p>
+                    <a href="#modal1" class="btn text medium primary js-modal-trigger">Open modal <i
+                            class="material-icons">launch</i></a>
                 </div>
             </div>
         </div>
 
     </main>
 
+    <script>
+        const reset = function () {
+            document.querySelectorAll('.page').forEach(p => {
+                p.style.display = 'none'
+            })
+        }
+
+        const path = function (path) {
+            reset()
+            var a = document.createElement('a')
+            var linkText = document.createTextNode("temp")
+            a.appendChild(linkText)
+            a.href = '#/' + path
+            document.body.appendChild(a)
+            id = path.replace('/', '-')
+            page = document.getElementById(id)
+            if (typeof (page) != 'undefined' && page != null) {
+                page.style.display = 'block'
+            } else {
+                console.log('404 :', id)
+            }
+            a.click()
+            a.remove()
+        }
+
+        reset()
+
+        if (window.location.hash) {
+            hash = window.location.hash.substring(2)
+            path(hash)
+        } else {
+            path('guide/intro')
+        }
+    </script>
+
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 </body>
 
 </html>

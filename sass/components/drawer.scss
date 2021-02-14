@@ -1,10 +1,6 @@
 main {
     margin-left: 0;
-    transition: margin-left 0.4s ease-in-out;
-
-    &.with-drawer {
-        margin-left: 280px;
-    }
+    transition: margin-left 150ms cubic-bezier(0.4,0.0,0.2,1);
 
     &.padding {
         padding: 8px;
@@ -12,15 +8,24 @@ main {
 }
 
 aside.drawer {
-    width: 280px;
-    padding-top: 8px;
-    float: left;
+    &.open {
+        &+main {
+            margin-left: 280px;
+        }
 
+        &.small+main {
+            margin-left: 80px;
+        }
+    }
+}
+
+@mixin large-item {
     .item {
         height: 48px;
         padding-left: 12px;
         cursor: pointer;
         @include prefix((border-radius: 0 25px 25px 0), webkit);
+        @include prefix((transition: border-radius 150ms ease), webkit);
 
         i {
             width: 24px;
@@ -35,7 +40,8 @@ aside.drawer {
             white-space: nowrap;
             margin-left: 20px;
             vertical-align: super;
-            @include font('Google Sans')
+            @include font('Google Sans');
+            @include prefix((transition: display 150ms ease), webkit);
         }
         
         &.active {
@@ -44,6 +50,79 @@ aside.drawer {
 
         &:not(.active):hover {
             background: rgb(0 0 0 / 8%);
+        }
+    }
+}
+
+@mixin small-item {
+    .item {
+        margin-left: 12px;
+        margin-right: 20px;
+        padding-left: 0;
+        @include prefix((border-radius: 25px), webkit);
+
+        span {
+            display: none;
+        }
+    }
+}
+
+aside.drawer {
+    margin-top: 8px;
+    height: calc(100% - 64px);
+    min-height: auto;
+    position: fixed;
+    top: 64px;
+    background: #fff;
+    transition: width 150ms cubic-bezier(0.4,0.0,0.2,1), box-shadow 150ms ease;
+
+    @include large-item();
+
+    a.bottom {
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+        color: #5f6368;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+    }
+
+    &.open {
+        width: 280px;
+    }
+
+    &.small {
+        width: 80px;
+
+        @include small-item();
+
+        a.bottom {
+            display: none;
+        }
+
+        &:hover {
+            width: 280px;
+            z-index: 10;
+
+            @include prefix((transition-delay: 350ms), webkit);
+            @include box-shadow(0 16px 10px 0 rgb(0 0 0 / 14%), 0 11px 18px 0 rgb(0 0 0 / 12%), 0 13px 5px -1px rgb(0 0 0 / 20%));
+            @include large-item();
+
+            .item {
+                @include prefix((transition-delay: 350ms), webkit);
+                margin-left: 0;
+
+                span {
+                    margin-top: 16px;
+                    display: inline-block;
+                    @include prefix((transition-delay: 350ms), webkit);
+                }
+            }
+
+            a.bottom {
+                display: block;
+            }
         }
     }
 }

@@ -5,5 +5,13 @@ $element-bottom-margin: ($gutter-width*2)/3 !default;
 
 :root {
     --color-primary: #1a73e8;
+    --color-primary-hover: #185abc;
+    --color-primary-text: #fff;
     --color-secondary: #e8f0fe;
+    --color-secondary-hover: #e8f0fe;
+    --color-secondary-text: #000;
+
+    --small-radius: 4px;
+    --medium-radius: 8px;
+    --large-radius: 16px;
 }
