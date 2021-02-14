@@ -9,11 +9,11 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.css">
-    <script defer src="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.js"></script>
+    <link rel="stylesheet" href="build/gl.css">
+    <script defer src="build/gl.js"></script>
 </head>
 
-<body>
+<body class="">
 
     <aside class="modal js-modal-closable" id="modal1">
         <div class="content">
@@ -23,7 +23,7 @@
         </div>
     </aside>
 
-    <header class="top-app-bar elevated colored">
+    <header id="topbar" class="top-app-bar fixed elevated colored">
         <div class="wrapper">
             <div class="left">
                 <button class="btn icon js-drawer-trigger"><i class="material-icons">menu</i></button>
@@ -49,44 +49,165 @@
             <i class="material-icons">palette</i>
             <span>Colors</span>
         </div>
+        <hr>
+        <div role="button" class="item" onclick="path('components/buttons')">
+            <i class="material-icons">add_box</i>
+            <span>Buttons</span>
+        </div>
         <div role="button" class="item" onclick="path('components/top-app-bar')">
             <i class="material-icons" style="transform: rotate(180deg);">call_to_action</i>
             <span>Top App Bar</span>
         </div>
-        <a href="#!" class="bottom">Licences Open Source</a>
+        <a href="https://github.com/Aryqs-Ipsum/gl-css" class="bottom">Github repository</a>
     </aside>
 
-    <main class="padding">
+    <main class="padding top-app-bar-fixed">
+
+        <div id="error-404" class="row page">
+            <h1>404</h1>
+            <p>Requested page not found</p>
+        </div>
+
+        <!-- /guide/ -->
 
         <div id="guide-intro" class="row page">
-
+            <a href="#modal1" class="btn text medium primary js-modal-trigger">Open modal <i
+                    class="material-icons">launch</i></a>
         </div>
 
         <div id="guide-quickstart" class="row page">
-            <div class="card elevated">
-                <pre class="prettyprint">
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.css&quot;&gt;
-&lt;script defer src=&quot;https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.js&quot;&gt;&lt;/script&gt;
-                </pre>
+            <div class="card outlined">
+                <h1>Quickstart</h1>
+                <p>Use assets with CDN link :</p>
+                <div class="code-wrapper">
+                    <pre class="prettyprint">&#x3C;!-- Material Design icons --&#x3E;
+&#x3C;link href=&#x22;https://fonts.googleapis.com/icon?family=Material+Icons&#x22; rel=&#x22;stylesheet&#x22;&#x3E;
+
+&#x3C;!-- gl-css files --&#x3E;
+&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.css&#x22;&#x3E;
+&#x3C;script defer src=&#x22;https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.js&#x22;&#x3E;&#x3C;/script&#x3E;</pre>
+                </div>
+                <p>Or download build assets on github repository :</p>
+                <a href="https://github.com/Aryqs-Ipsum/gl-css/tree/main/build">https://github.com/Aryqs-Ipsum/gl-css/tree/main/build</a>
             </div>
         </div>
 
+        <!-- /theme/ -->
+
         <div id="theme-colors" class="row page">
-            <div class="col s12">
-                <div class="card outlined">
-                    <h1>Hello World !</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis sint, debitis delectus
-                        architecto
-                        obcaecati nobis ab sit iste eos provident illum ex laboriosam, fuga autem exercitationem vero
-                        totam at
-                        incidunt?</p>
-                    <a href="#modal1" class="btn text medium primary js-modal-trigger">Open modal <i
-                            class="material-icons">launch</i></a>
-                </div>
+            <div class="col s6 m4 color-parcel" style="background: var(--color-primary);">
+                <p style="color: var(--color-primary-text)">Primary color</p>
             </div>
+            <div class="col s6 m4 color-parcel" style="background: var(--color-secondary);">
+                <p style="color: var(--color-secondary-text)">Secondary color</p>
+            </div>
+            <div class="col s6 m4 color-parcel"
+                style="background: var(--color-background);border: 1px solid rgb(150 150 150 / 15%)">
+                <p style="color: var(--color-background-text)">Text on background color</p>
+            </div>
+            <div class="col s6 m4 color-parcel" style="background: var(--color-background-alt);">
+                <p style="color: var(--color-background-text-alt)">Alt text on background alt color</p>
+            </div>
+            <hr>
+            <input type="checkbox" id="dark-mode-input"
+                onclick="document.querySelector('body').classList.toggle('dark')">
+            <label for="dark-mode-input">dark mode</label>
+        </div>
+
+        <!-- /components/ -->
+
+        <div id="components-buttons" class="row page">
+            <h1>buttons</h1>
+            <p>Buttons communicate actions that users can take. They are typically placed throughout your UI, in places
+                like:
+                <ul>
+                    <li>Dialogs</li>
+                    <li>Modal windows</li>
+                    <li>Forms</li>
+                    <li>Cards</li>
+                    <li>Toolbars</li>
+                </ul>
+            </p>
+
+            <h1>types</h1>
+            <button class="btn icon"><i class="material-icons">edit</i></button>
+            <div class="code-wrapper">
+                <pre class="prettyprint">&#x3C;button class=&#x22;btn icon&#x22;&#x3E;&#x3C;i class=&#x22;material-icons&#x22;&#x3E;edit&#x3C;/i&#x3E;&#x3C;/button&#x3E;</pre>
+            </div>
+
+            <h1>Styles</h1>
+            <button class="btn">flat</button>
+            <button class="btn outlined">outlined</button>
+            <button class="btn primary">primary</button>
+            <button class="btn secondary">secondary</button>
+            <div class="code-wrapper">
+                <pre class="prettyprint">&#x3C;button class=&#x22;btn&#x22;&#x3E;flat&#x3C;/button&#x3E;
+&#x3C;button class=&#x22;btn outlined&#x22;&#x3E;outlined&#x3C;/button&#x3E;
+&#x3C;button class=&#x22;btn primary&#x22;&#x3E;primary&#x3C;/button&#x3E;
+&#x3C;button class=&#x22;btn secondary&#x22;&#x3E;secondary&#x3C;/button&#x3E;</pre>
+            </div>
+
+            <h1>Sizes</h1>
+            <button class="btn outlined small">small</button>
+            <button class="btn outlined">medium</button>
+            <button class="btn outlined large">large</button>
+            <div class="code-wrapper">
+                <pre class="prettyprint">&#x3C;button class=&#x22;btn outlined small&#x22;&#x3E;small&#x3C;/button&#x3E;
+&#x3C;button class=&#x22;btn outlined&#x22;&#x3E;medium&#x3C;/button&#x3E;
+&#x3C;button class=&#x22;btn outlined large&#x22;&#x3E;large&#x3C;/button&#x3E;</pre>
+            </div>
+
+            <p>Also work with "a" tag</p>
+        </div>
+
+        <div id="components-top-app-bar" class="row page">
+            <h1>Top app bar</h1>
+            <p>The top app bar provides content and actions related to the current screen. It’s used for branding,
+                screen titles, navigation, and actions.
+
+                It can transform into a contextual action bar.</p>
+
+            <input checked type="checkbox" id="topbar-elevated-input"
+                onclick="document.getElementById('topbar').classList.toggle('elevated')">
+            <label for="topbar-elevated-input">elevated</label>
+            <input checked type="checkbox" id="topbar-colored-input"
+                onclick="document.getElementById('topbar').classList.toggle('colored')">
+            <label for="topbar-colored-input">colored</label>
         </div>
 
     </main>
+
+    <style>
+        .code-wrapper {
+            padding: 8px;
+            margin: 8px 0;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+            background-color: #eaeaea;
+            border-radius: var(--medium-radius);
+        }
+        .code-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        pre.prettyprint {
+            border: none;
+            margin: 0;
+        }
+
+        .color-parcel {
+            height: 150px;
+            position: relative;
+        }
+
+        .color-parcel p {
+            position: absolute;
+            font-family: "Google Sans", Arial, Helvetica, sans-serif;
+            bottom: 0;
+            left: 16px;
+        }
+    </style>
 
     <script>
         const reset = function () {
@@ -108,6 +229,7 @@
                 page.style.display = 'block'
             } else {
                 console.log('404 :', id)
+                document.getElementById('error-404').style.display = 'block';
             }
             a.click()
             a.remove()
@@ -123,7 +245,7 @@
         }
     </script>
 
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 </body>
 
 </html>

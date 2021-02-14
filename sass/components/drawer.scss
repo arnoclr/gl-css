@@ -23,6 +23,7 @@ aside.drawer {
     .item {
         height: 48px;
         padding-left: 12px;
+        color: var(--color-background-text-alt);
         cursor: pointer;
         @include prefix((border-radius: 0 25px 25px 0), webkit);
         @include prefix((transition: border-radius 150ms ease), webkit);
@@ -46,6 +47,7 @@ aside.drawer {
         
         &.active {
             background: var(--color-secondary);
+            color: var(--color-secondary-text);
         }
 
         &:not(.active):hover {
@@ -73,7 +75,7 @@ aside.drawer {
     min-height: auto;
     position: fixed;
     top: 64px;
-    background: #fff;
+    background: var(--color-background);
     transition: width 150ms cubic-bezier(0.4,0.0,0.2,1), box-shadow 150ms ease;
 
     @include large-item();
@@ -82,7 +84,7 @@ aside.drawer {
         position: absolute;
         bottom: 16px;
         left: 16px;
-        color: #5f6368;
+        color: var(--color-background-text-alt);
         text-decoration: none;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 14px;

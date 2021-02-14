@@ -6,6 +6,11 @@ body {
 
     @include headings {
         font-family: 'Product Sans', sans-serif;
+        color: var(--color-background-text);
+    }
+
+    p, small, span, li {
+        color: var(--color-background-text-alt);
     }
 
 }

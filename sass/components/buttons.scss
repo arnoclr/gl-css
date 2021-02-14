@@ -13,47 +13,39 @@ a.btn, button.btn {
     text-decoration: none;
     @include prefix((transition: box-shadow 350ms ease), webkit);
 
-    &.primary {
-        color: var(--color-primary-text);
-        background: var(--color-primary);
-
-        &:hover {
-            @include box-shadow(0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%));
-            background-color: var(--color-primary-hover);
-        }
-    }
-
-    &.secondary {
-        color: var(--color-secondary-text);
-        background: var(--color-secondary);
-
-        &:hover {
-            @include box-shadow(0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%));
-            background-color: var(--color-secondary-hover);
-        }
-    }
-
-    &.text {
-        margin-bottom: 16px;
+    &:not(.icon) {
+        height: 36px;
+        padding: 4px 10px;
         border-radius: var(--medium-radius);
-        font-size: 16px;
-        font-weight: 500;
-        font-family: "Google Sans Medium", Arial, Helvetica, sans-serif;
-        text-align: center;
 
-        i {
-            margin-left: 8px;
-            vertical-align: text-bottom;
+        &.outlined {
+            border: 1px solid rgb(150 150 150 / 50%);
+        }
+
+        &:not(.primary, .secondary) {
+            color: var(--color-background-text-alt);
+
+            &:hover {
+                background-color: rgb(150 150 150 / 25%);
+            }
+        }
+
+        &.primary {
+            background-color: var(--color-primary);
+            color: var(--color-primary-text);
+        }
+
+        &.secondary {
+            background-color: var(--color-secondary);
+            color: var(--color-secondary-text);
         }
 
         &.small {
-            height: 32px;
-            padding: 4px 16px;
+            height: 28px;
         }
 
-        &.medium {
+        &.large {
             height: 48px;
-            padding: 8px 24px;
         }
     }
 
@@ -71,6 +63,7 @@ a.btn, button.btn {
         }
 
         i {
+            color: var(--color-background-text-alt);
             font-size: 24px;
         }
     }

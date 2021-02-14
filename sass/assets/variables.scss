@@ -10,8 +10,19 @@ $element-bottom-margin: ($gutter-width*2)/3 !default;
     --color-secondary: #e8f0fe;
     --color-secondary-hover: #e8f0fe;
     --color-secondary-text: #000;
+    --color-background: #fff;
+    --color-background-alt: #fafafa;
+    --color-background-text: #212121;
+    --color-background-text-alt: #5f6368;
 
     --small-radius: 4px;
     --medium-radius: 8px;
     --large-radius: 16px;
+}
+
+body.dark {
+    --color-background: #202124;
+    --color-background-alt: #313235;
+    --color-background-text: #e8eaed;
+    --color-background-text-alt: #9aa0a6;
 }
