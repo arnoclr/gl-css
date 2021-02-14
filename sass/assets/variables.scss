@@ -21,6 +21,8 @@ $element-bottom-margin: ($gutter-width*2)/3 !default;
 }
 
 body.dark {
+    --color-secondary: #5c80bf;
+    --color-secondary-text: #fff;
     --color-background: #202124;
     --color-background-alt: #313235;
     --color-background-text: #e8eaed;

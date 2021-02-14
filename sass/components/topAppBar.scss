@@ -7,6 +7,7 @@ header {
     &.top-app-bar {
 
         z-index: 7;
+        background-color: var(--color-background);
 
         @include prefix((
             box-shadow: inset 0 -1px 0 0 rgb(150 150 150 / 40%),

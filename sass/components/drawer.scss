@@ -39,15 +39,19 @@ aside.drawer {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            position: absolute;
             margin-left: 20px;
+            margin-top: 16px;
             vertical-align: super;
             @include font('Google Sans');
-            @include prefix((transition: display 150ms ease), webkit);
         }
         
         &.active {
             background: var(--color-secondary);
-            color: var(--color-secondary-text);
+            
+            i, span {
+                color: var(--color-secondary-text);
+            }
         }
 
         &:not(.active):hover {
@@ -64,7 +68,7 @@ aside.drawer {
         @include prefix((border-radius: 25px), webkit);
 
         span {
-            display: none;
+            margin-left: -280px;
         }
     }
 }
@@ -99,10 +103,6 @@ aside.drawer {
 
         @include small-item();
 
-        a.bottom {
-            display: none;
-        }
-
         &:hover {
             width: 280px;
             z-index: 10;
@@ -112,12 +112,17 @@ aside.drawer {
             @include large-item();
 
             .item {
-                @include prefix((transition-delay: 350ms), webkit);
                 margin-left: 0;
 
+                @include prefix((transition-delay: 350ms), webkit);
+
+                i {
+                    vertical-align: top;
+                }
+
                 span {
-                    margin-top: 16px;
-                    display: inline-block;
+                    margin-left: 20px;
+
                     @include prefix((transition-delay: 350ms), webkit);
                 }
             }
