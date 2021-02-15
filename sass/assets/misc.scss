@@ -7,3 +7,26 @@ hr {
 body {
     background-color: var(--color-background);
 }
+
+.relative {
+    position: relative;
+}
+
+img {
+    &.responsive {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.rounded {
+    &.small {
+        border-radius: var(--small-radius);
+    }
+    &.large {
+        border-radius: var(--large-radius);
+    }
+    &:not(.small, .large) {
+        border-radius: var(--medium-radius);
+    }
+}

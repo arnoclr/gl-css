@@ -15,11 +15,31 @@
 
 <body class="">
 
-    <aside class="modal js-modal-closable" id="modal1">
+    <aside class="modal js-modal-closable" id="modal-colors-vars">
         <div class="content">
-            <p>loading ...</p>
-            <div class="loader circular"></div>
-            <a href="#!" class="btn text secondary small js-modal-close">close</a>
+            <div class="code-wrapper">
+                <pre class="prettyprint">:root {
+    --color-primary: #1a73e8;
+    --color-primary-hover: #185abc;
+    --color-primary-text: #fff;
+    --color-secondary: #e8f0fe;
+    --color-secondary-hover: #e8f0fe;
+    --color-secondary-text: #000;
+    --color-background: #fff;
+    --color-background-alt: #fafafa;
+    --color-background-text: #212121;
+    --color-background-text-alt: #5f6368;
+}
+
+body.dark {
+    --color-secondary: #5c80bf;
+    --color-secondary-text: #fff;
+    --color-background: #202124;
+    --color-background-alt: #313235;
+    --color-background-text: #e8eaed;
+    --color-background-text-alt: #9aa0a6;
+}</pre>
+            </div>
         </div>
     </aside>
 
@@ -36,29 +56,33 @@
     </header>
 
     <aside class="drawer open">
-        <div role="button" class="item active" onclick="path('guide/intro')">
+        <div id="item-guide-intro" role="button" class="item active" onclick="path('guide/intro')">
             <i class="material-icons">lightbulb</i>
             <span>Introduction</span>
         </div>
-        <div role="button" class="item" onclick="path('guide/quickstart')">
+        <div id="item-guide-quickstart" role="button" class="item" onclick="path('guide/quickstart')">
             <i class="material-icons">download</i>
             <span>Get Started</span>
         </div>
         <hr>
-        <div role="button" class="item" onclick="path('theme/colors')">
+        <div id="item-theme-colors" role="button" class="item" onclick="path('theme/colors')">
             <i class="material-icons">palette</i>
             <span>Colors</span>
         </div>
         <hr>
-        <div role="button" class="item" onclick="path('components/buttons')">
+        <div id="item-components-buttons" role="button" class="item" onclick="path('components/buttons')">
             <i class="material-icons">add_box</i>
             <span>Buttons</span>
         </div>
-        <div role="button" class="item" onclick="path('components/drawer')">
+        <div id="item-components-checkbox" role="button" class="item" onclick="path('components/checkbox')">
+            <i class="material-icons">check_box</i>
+            <span>Checkbox</span>
+        </div>
+        <div id="item-components-drawer" role="button" class="item" onclick="path('components/drawer')">
             <i class="material-icons" style="transform: rotate(180deg);">view_sidebar</i>
             <span>Drawer</span>
         </div>
-        <div role="button" class="item" onclick="path('components/top-app-bar')">
+        <div id="item-components-top-app-bar" role="button" class="item" onclick="path('components/top-app-bar')">
             <i class="material-icons" style="transform: rotate(180deg);">call_to_action</i>
             <span>Top App Bar</span>
         </div>
@@ -74,13 +98,15 @@
 
         <!-- /guide/ -->
 
-        <div id="guide-intro" class="row page card outlined">
-            <!-- <a href="#modal1" class="btn text medium primary js-modal-trigger">Open modal <i
-                    class="material-icons">launch</i></a> -->
-            <h1>gl css</h1>
-            <p>gl css is a material design framework inspired by new google rounded style. It includes lots of easy to use components to quickly develop web interfaces.</p>
-            <div style="text-align: center;">
-                <button class="btn primary large" onclick="path('guide/quickstart');">get started</button>
+        <div id="guide-intro" class="row page">
+            <img style="object-fit: cover; max-height: 360px; width: 100%;"
+                class="rounded" src="https://material.io/archive/guidelines/assets/0Bx4BSt6jniD7Y1huOXVQdlFPMmM/materialdesign-introduction.png" alt="material design blue illustration">
+            <div class="card outlined">
+                <h1>gl css</h1>
+                <p>gl css is a material design framework inspired by new google rounded style. It includes lots of easy to use components to quickly develop web interfaces.</p>
+                <div style="text-align: center;">
+                    <button class="btn primary large" onclick="path('guide/quickstart');">get started</button>
+                </div>
             </div>
         </div>
 
@@ -101,24 +127,36 @@
 
         <!-- /theme/ -->
 
-        <div id="theme-colors" class="row page card outlined">
-            <div class="col s6 m4 color-parcel" style="background: var(--color-primary);">
-                <p style="color: var(--color-primary-text)">Primary color</p>
+        <div id="theme-colors" class="page card outlined">
+            <div class="row relative">
+                <a title="open css variables" class="btn icon js-modal-trigger" style="position:absolute;top:-8px;right:8px;" href="#modal-colors-vars"><i class="material-icons">code</i></a>
+                <h1>Theme colors</h1>
+                <div class="col s6 m4 color-parcel" style="background: var(--color-primary);">
+                    <p style="color: var(--color-primary-text)">Primary color</p>
+                </div>
+                <div class="col s6 m4 color-parcel" style="background: var(--color-secondary);">
+                    <p style="color: var(--color-secondary-text)">Secondary color</p>
+                </div>
+                <div class="col s6 m4 color-parcel"
+                    style="background: var(--color-background);border: 1px solid rgb(150 150 150 / 15%)">
+                    <p style="color: var(--color-background-text)">Text on background color</p>
+                </div>
+                <div class="col s6 m4 color-parcel" style="background: var(--color-background-alt);">
+                    <p style="color: var(--color-background-text-alt)">Alt text on background alt color</p>
+                </div>
             </div>
-            <div class="col s6 m4 color-parcel" style="background: var(--color-secondary);">
-                <p style="color: var(--color-secondary-text)">Secondary color</p>
+            
+            <div class="row">
+                <label class="checkbox">
+                    <input type="checkbox" id="dark-mode-input"
+                    onclick="document.querySelector('body').classList.toggle('dark')">
+                    <span>Dark mode</span>
+                </label>
             </div>
-            <div class="col s6 m4 color-parcel"
-                style="background: var(--color-background);border: 1px solid rgb(150 150 150 / 15%)">
-                <p style="color: var(--color-background-text)">Text on background color</p>
+
+            <div class="row">
+                <h1>Other colors</h1>
             </div>
-            <div class="col s6 m4 color-parcel" style="background: var(--color-background-alt);">
-                <p style="color: var(--color-background-text-alt)">Alt text on background alt color</p>
-            </div>
-            <hr>
-            <input type="checkbox" id="dark-mode-input"
-                onclick="document.querySelector('body').classList.toggle('dark')">
-            <label for="dark-mode-input">dark mode</label>
         </div>
 
         <!-- /components/ -->
@@ -167,6 +205,39 @@
             <p>Also work with "a" tag</p>
         </div>
 
+        <div id="components-checkbox" class="row page card outlined">
+            <h1>Checkbox</h1>
+            <p>Checkboxes allow users to select one or more items from a set. Checkboxes can turn an option on or off.</p>
+            
+            <label class="checkbox">
+                <input type="checkbox">
+                <span>Checkbox</span>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" checked>
+                <span>Checked checkbox</span>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" disabled>
+                <span>Disabled checkbox</span>
+            </label>
+
+            <div class="code-wrapper">
+                <pre class="prettyprint">&#x3C;label class=&#x22;checkbox&#x22;&#x3E;
+    &#x3C;input type=&#x22;checkbox&#x22;&#x3E;
+    &#x3C;span&#x3E;Checkbox&#x3C;/span&#x3E;
+&#x3C;/label&#x3E;
+&#x3C;label class=&#x22;checkbox&#x22;&#x3E;
+    &#x3C;input type=&#x22;checkbox&#x22; checked&#x3E;
+    &#x3C;span&#x3E;Checked checkbox&#x3C;/span&#x3E;
+&#x3C;/label&#x3E;
+&#x3C;label class=&#x22;checkbox&#x22;&#x3E;
+    &#x3C;input type=&#x22;checkbox&#x22; disabled&#x3E;
+    &#x3C;span&#x3E;Disabled checkbox&#x3C;/span&#x3E;
+&#x3C;/label&#x3E;</pre>
+            </div>
+        </div>
+
         <div id="components-drawer" class="row page card outlined">
             <h1>Drawer</h1>
             <p>Navigation drawers are recommended for:</p>
@@ -210,12 +281,32 @@
 
                 It can transform into a contextual action bar.</p>
 
-            <input checked type="checkbox" id="topbar-elevated-input"
-                onclick="document.getElementById('topbar').classList.toggle('elevated')">
-            <label for="topbar-elevated-input">elevated</label>
-            <input checked type="checkbox" id="topbar-colored-input"
-                onclick="document.getElementById('topbar').classList.toggle('colored')">
-            <label for="topbar-colored-input">colored</label>
+            <div class="row">
+                <label class="checkbox">
+                    <input checked type="checkbox" id="topbar-elevated-input"
+                            onclick="document.getElementById('topbar').classList.toggle('elevated')">
+                    <span>Elevated</span>
+                </label>
+                <label class="checkbox">
+                    <input checked type="checkbox" id="topbar-colored-input"
+                            onclick="document.getElementById('topbar').classList.toggle('colored')">
+                    <span>Colored</span>
+                </label>
+            </div>
+
+            <div class="code-wrapper">
+                <pre class="prettyprint">&#x3C;header class=&#x22;top-app-bar fixed elevated colored&#x22;&#x3E;
+    &#x3C;div class=&#x22;wrapper&#x22;&#x3E;
+        &#x3C;div class=&#x22;left&#x22;&#x3E;
+            &#x3C;button class=&#x22;btn icon js-drawer-trigger&#x22;&#x3E;&#x3C;i class=&#x22;material-icons&#x22;&#x3E;menu&#x3C;/i&#x3E;&#x3C;/button&#x3E;
+        &#x3C;/div&#x3E;
+        &#x3C;span class=&#x22;brand&#x22;&#x3E;gl css&#x3C;/span&#x3E;
+        &#x3C;div class=&#x22;toolbar&#x22;&#x3E;
+            &#x3C;a href=&#x22;#!&#x22; class=&#x22;btn icon&#x22;&#x3E;&#x3C;i class=&#x22;material-icons&#x22;&#x3E;settings&#x3C;/i&#x3E;&#x3C;/a&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/header&#x3E;</pre>
+            </div>
         </div>
 
     </main>
@@ -257,6 +348,9 @@
             document.querySelectorAll('.page').forEach(p => {
                 p.style.display = 'none'
             })
+            document.querySelectorAll('aside.drawer .item.active').forEach(i => {
+                i.classList.remove('active')
+            })
         }
 
         const path = function (path) {
@@ -270,6 +364,7 @@
             page = document.getElementById(id)
             if (typeof (page) != 'undefined' && page != null) {
                 page.style.display = 'block'
+                document.getElementById('item-' + id).classList.add('active')
             } else {
                 console.log('404 :', id)
                 document.getElementById('error-404').style.display = 'block';
@@ -285,6 +380,10 @@
             path(hash)
         } else {
             path('guide/intro')
+        }
+
+        if (window.innerWidth < 960) {
+            document.querySelector('aside.drawer').classList.add('small')
         }
     </script>
 
