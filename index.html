@@ -82,12 +82,17 @@ body.dark {
             <i class="material-icons" style="transform: rotate(180deg);">view_sidebar</i>
             <span>Drawer</span>
         </div>
+        <div id="item-components-text-fields" role="button" class="item" onclick="path('components/text-fields')">
+            <i class="material-icons">text_fields</i>
+            <span>Text Fields</span>
+        </div>
         <div id="item-components-top-app-bar" role="button" class="item" onclick="path('components/top-app-bar')">
             <i class="material-icons" style="transform: rotate(180deg);">call_to_action</i>
             <span>Top App Bar</span>
         </div>
         <a href="https://github.com/Aryqs-Ipsum/gl-css" class="bottom">Github repository</a>
     </aside>
+    <div class="drawer-backdrop js-drawer-closable"></div>
 
     <main class="padding top-app-bar-fixed">
 
@@ -271,9 +276,26 @@ body.dark {
     &#x3C;/div&#x3E;
     &#x3C;a href=&#x22;#!&#x22; class=&#x22;bottom&#x22;&#x3E;link&#x3C;/a&#x3E;
 &#x3C;/aside&#x3E;
+&#x3C;div class=&#x22;drawer-backdrop js-drawer-closable&#x22;&#x3E;&#x3C;/div&#x3E;
 
 &#x3C;!-- app content --&#x3E;
 &#x3C;main&#x3E;&#x3C;/main&#x3E;</pre>
+            </div>
+        </div>
+
+        <div id="components-text-fields" class="row page card outlined">
+            <h1>Text Fields</h1>
+            <div class="text-field">
+                <input placeholder=" " id="input-flat" type="text">
+                <label for="input-flat">flat</label>
+            </div>
+            <div class="text-field filled">
+                <input placeholder=" " id="input-filled" type="text">
+                <label for="input-filled">filled</label>
+            </div>
+            <div class="text-field outlined">
+                <input placeholder=" " id="input-outlined" type="text">
+                <label for="input-outlined">outlined</label>
             </div>
         </div>
 
@@ -383,10 +405,6 @@ body.dark {
             path(hash)
         } else {
             path('guide/intro')
-        }
-
-        if (window.innerWidth < 960) {
-            document.querySelector('aside.drawer').classList.add('small')
         }
 
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {

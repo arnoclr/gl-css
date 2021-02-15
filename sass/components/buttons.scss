@@ -9,7 +9,6 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 a.btn, button.btn {
-
     text-decoration: none;
     @include prefix((transition: box-shadow 350ms ease), webkit);
 
@@ -19,7 +18,11 @@ a.btn, button.btn {
         border-radius: var(--medium-radius);
 
         &.outlined {
-            border: 1px solid rgb(150 150 150 / 50%);
+            border: 1px solid rgb(150 150 150 / 30%);
+
+            &:hover {
+                border: 1px solid transparent;
+            }
         }
 
         &:not(.primary, .secondary) {
@@ -67,5 +70,4 @@ a.btn, button.btn {
             font-size: 24px;
         }
     }
-
 }

@@ -63,7 +63,7 @@
     }
 
     &:hover {
-        span {
+        input:not(:disabled):not(:checked)+span {
             &::before {
                 background-color: rgb(150 150 150 / 20%);
             }

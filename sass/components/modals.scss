@@ -1,4 +1,4 @@
-aside.modal {
+aside.modal:not(.drawer) {
     position: fixed;
     width: 100%;
     height: 100%;

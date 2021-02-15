@@ -1,0 +1,98 @@
+@mixin input-filled-label() {
+    &:focus+label, &:not(:placeholder-shown)+label {
+        @content
+    }
+}
+
+.text-field {
+    position: relative;
+    display:inline-block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    vertical-align: bottom;
+
+    input {
+        border: none;
+        outline: none;
+        box-sizing: border-box;
+        background-color: transparent;
+        color: var(--color-background-text);
+
+        &:focus+label {
+            color: var(--color-primary);
+        }
+
+        @include input-filled-label() {
+            margin-top: -16px;
+            font-size: 14px;
+        }
+    }
+
+    label {
+        color: var(--color-background-text-alt);
+        position: absolute;
+        margin-top: 0;
+        left: 0;
+        font-size: 18px;
+        transition: margin-top 150ms ease, font-size 150ms ease-out;
+    }
+
+    &:not(.outlined) {
+        input {
+            border-bottom: 1px solid rgb(125 125 125 / 30%);
+
+            &:focus {
+                border-bottom: 2px solid var(--color-primary);
+            }
+        }
+    }
+
+    &.filled {
+        input {
+            padding: 16px 8px 8px 8px;
+            background-color: rgb(125 125 125 / 10%);
+            border-top-left-radius: var(--medium-radius);
+            border-top-right-radius: var(--medium-radius);
+
+            @include input-filled-label() {
+                margin-top: 0px;
+                font-size: 11px;
+            }
+        }
+
+        label {
+            margin-top: 12px;
+            margin-left: 8px;
+        }
+
+        &:hover {
+            input {
+                background-color: rgb(125 125 125 / 20%);
+            }
+        }
+    }
+
+    &.outlined {
+        input {
+            padding: 12px 8px;
+            border: 1px solid rgb(125 125 125 / 30%);
+            border-radius: var(--small-radius);
+
+            @include input-filled-label() {
+                margin-top: -12px;
+            }
+
+            &:focus {
+                border-color: var(--color-primary);
+                box-shadow: inset 0 0 0 1px var(--color-primary);
+            }
+        }
+
+        label {
+            margin-top: 8px;
+            margin-left: 8px;
+            padding: 4px;
+            background-color: var(--color-background);
+        }
+    }
+}
