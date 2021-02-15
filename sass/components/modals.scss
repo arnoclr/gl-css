@@ -21,7 +21,7 @@ aside.modal {
         max-width: 580px;
         max-height: 100vh;
         padding: 16px;
-        background: #fff;
+        background: var(--color-background);
         border-radius: var(--large-radius);
 
         @include box-shadow(0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%));

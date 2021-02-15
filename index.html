@@ -99,8 +99,8 @@ body.dark {
         <!-- /guide/ -->
 
         <div id="guide-intro" class="row page">
-            <img style="object-fit: cover; max-height: 360px; width: 100%;"
-                class="rounded" src="https://material.io/archive/guidelines/assets/0Bx4BSt6jniD7Y1huOXVQdlFPMmM/materialdesign-introduction.png" alt="material design blue illustration">
+            <img height="360" style="object-fit: cover; max-height: 360px; width: 100%;"
+                class="rounded loading" src="https://material.io/archive/guidelines/assets/0Bx4BSt6jniD7Y1huOXVQdlFPMmM/materialdesign-introduction.png" alt="material design blue illustration">
             <div class="card outlined">
                 <h1>gl css</h1>
                 <p>gl css is a material design framework inspired by new google rounded style. It includes lots of easy to use components to quickly develop web interfaces.</p>
@@ -143,6 +143,9 @@ body.dark {
                 </div>
                 <div class="col s6 m4 color-parcel" style="background: var(--color-background-alt);">
                     <p style="color: var(--color-background-text-alt)">Alt text on background alt color</p>
+                </div>
+                <div class="col s6 m4 color-parcel loading">
+                    <p style="color: var(--color-background-text)">loading state</p>
                 </div>
             </div>
             
@@ -384,6 +387,10 @@ body.dark {
 
         if (window.innerWidth < 960) {
             document.querySelector('aside.drawer').classList.add('small')
+        }
+
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.getElementById('dark-mode-input').click()
         }
     </script>
 

@@ -12,13 +12,6 @@ body {
     position: relative;
 }
 
-img {
-    &.responsive {
-        max-width: 100%;
-        height: auto;
-    }
-}
-
 .rounded {
     &.small {
         border-radius: var(--small-radius);
