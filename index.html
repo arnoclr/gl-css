@@ -304,17 +304,39 @@ body.dark {
             </div>
 
             <h2>Linear</h2>
-            <p>Indeterminate</p>
-            <div class="linear-loader indeterminate"></div>
-            <div class="code-wrapper">
-                <pre class="prettyprint">&#x3C;div class=&#x22;linear-loader indeterminate&#x22;&#x3E;&#x3C;/div&#x3E;</pre>
-            </div>
-            <p>Determinate</p>
-            <div class="linear-loader">
+            <div class="linear-loader" id="linear-loader-demo">
                 <div class="determinate" style="width: 25%;"></div>
             </div>
+            <div class="text-field">
+                <input value="25" type="number" min="0" max="100" id="tf1" placeholder=" "
+                    onchange="document.querySelector('#linear-loader-demo div').style.width = this.value+'%';">
+                <label for="tf1">progress</label>
+            </div>
+            <label class="checkbox">
+                <input id="ch1" type="checkbox" onclick="trigger_determinate();">
+                <span>Indeterminate</span>
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" onclick="document.getElementById('linear-loader-demo').classList.toggle('hidden');">
+                <span>Hidden</span>
+            </label>
+            <script>
+                function trigger_determinate() {
+                    if (document.getElementById('ch1').checked) {
+                        document.querySelector('#linear-loader-demo div').classList.remove('determinate');
+                        document.querySelector('#linear-loader-demo div').classList.add('indeterminate');
+                    } else {
+                        document.querySelector('#linear-loader-demo div').classList.remove('indeterminate');
+                        document.querySelector('#linear-loader-demo div').classList.add('determinate');
+                    }
+                }
+            </script>
             <div class="code-wrapper">
                 <pre class="prettyprint">&#x3C;div class=&#x22;linear-loader&#x22;&#x3E;
+    &#x3C;div class=&#x22;indeterminate&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;div class=&#x22;linear-loader&#x22;&#x3E;
     &#x3C;div class=&#x22;determinate&#x22; style=&#x22;width: 25%;&#x22;&#x3E;&#x3C;/div&#x3E;
 &#x3C;/div&#x3E;</pre>
             </div>
