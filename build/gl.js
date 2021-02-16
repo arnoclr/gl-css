@@ -22,16 +22,19 @@ document.querySelectorAll('.drawer .item').forEach(a => {
 })
 
 function _setDrawerMode() {
-    document.querySelector('aside.drawer').classList.remove('modal')
-    document.querySelector('aside.drawer').classList.remove('small')
     if (window.innerWidth < 600) {
+        document.querySelector('aside.drawer').classList.remove('small')
         document.querySelector('aside.drawer').classList.remove('open')
         document.querySelector('aside.drawer').classList.add('modal')
-    } else if (window.innerWidth < 960) {
-        document.querySelector('aside.drawer').classList.add('open')
-        document.querySelector('aside.drawer').classList.add('small')
     } else {
-        document.querySelector('aside.drawer').classList.add('open')
+        document.querySelector('aside.drawer').classList.remove('modal')
+        if (window.innerWidth < 960) {
+            document.querySelector('aside.drawer').classList.add('open')
+            document.querySelector('aside.drawer').classList.add('small')
+        } else {
+            document.querySelector('aside.drawer').classList.remove('small')
+            document.querySelector('aside.drawer').classList.add('open')
+        }
     }
 }
 
@@ -56,4 +59,10 @@ document.querySelectorAll('.js-modal-closable, .js-modal-close').forEach(e => {
     e.addEventListener('click', () => {
         e.classList.remove('open')
     })
+})
+
+// loader
+
+document.querySelectorAll('.js-circular-loader').forEach(l => {
+    l.innerHTML += '<svg class="loader" width="42" height="42" xmlns="http://www.w3.org/2000/svg"><g><ellipse ry="16" rx="16" cy="21" cx="21" stroke-width="4" fill="none"/></g></svg>'
 })

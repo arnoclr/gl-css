@@ -82,6 +82,10 @@ body.dark {
             <i class="material-icons" style="transform: rotate(180deg);">view_sidebar</i>
             <span>Drawer</span>
         </div>
+        <div id="item-components-loaders" role="button" class="item" onclick="path('components/loaders')">
+            <i class="material-icons">hourglass_top</i>
+            <span>Loaders</span>
+        </div>
         <div id="item-components-text-fields" role="button" class="item" onclick="path('components/text-fields')">
             <i class="material-icons">text_fields</i>
             <span>Text Fields</span>
@@ -283,19 +287,65 @@ body.dark {
             </div>
         </div>
 
+        <div id="components-loaders" class="row page card outlined">
+            <h1>Loaders</h1>
+            <p>Progress indicators inform users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates. They communicate an app’s state and indicate available actions, such as whether users can navigate away from the current screen.</p>
+            <h2>Circular</h2>
+            <div class="js-circular-loader"></div>
+            <div class="code-wrapper">
+                <pre class="prettyprint">&#x3C;div class=&#x22;js-circular-loader&#x22;&#x3E;&#x3C;/div&#x3E;
+
+&#x3C;!-- or this (if loader is needed before gl.js load) --&#x3E;
+&#x3C;svg class=&#x22;loader&#x22; width=&#x22;42&#x22; height=&#x22;42&#x22; xmlns=&#x22;http://www.w3.org/2000/svg&#x22;&#x3E;
+    &#x3C;g&#x3E;
+        &#x3C;ellipse ry=&#x22;16&#x22; rx=&#x22;16&#x22; cy=&#x22;21&#x22; cx=&#x22;21&#x22; stroke-width=&#x22;4&#x22; fill=&#x22;none&#x22;/&#x3E;
+    &#x3C;/g&#x3E;
+&#x3C;/svg&#x3E;</pre>
+            </div>
+
+            <h2>Linear</h2>
+            <p>Indeterminate</p>
+            <div class="linear-loader indeterminate"></div>
+            <div class="code-wrapper">
+                <pre class="prettyprint">&#x3C;div class=&#x22;linear-loader indeterminate&#x22;&#x3E;&#x3C;/div&#x3E;</pre>
+            </div>
+            <p>Determinate</p>
+            <div class="linear-loader">
+                <div class="determinate" style="width: 25%;"></div>
+            </div>
+            <div class="code-wrapper">
+                <pre class="prettyprint">&#x3C;div class=&#x22;linear-loader&#x22;&#x3E;
+    &#x3C;div class=&#x22;determinate&#x22; style=&#x22;width: 25%;&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</pre>
+            </div>
+        </div>
+
         <div id="components-text-fields" class="row page card outlined">
             <h1>Text Fields</h1>
-            <div class="text-field">
-                <input placeholder=" " id="input-flat" type="text">
-                <label for="input-flat">flat</label>
-            </div>
-            <div class="text-field filled">
-                <input placeholder=" " id="input-filled" type="text">
-                <label for="input-filled">filled</label>
-            </div>
-            <div class="text-field outlined">
-                <input placeholder=" " id="input-outlined" type="text">
-                <label for="input-outlined">outlined</label>
+            <p>Text fields allow users to enter text into a UI. They typically appear in forms and dialogs.</p>
+            <div class="card outlined">
+                <div class="row">
+                    <p>Interactive demo</p>
+                    <div class="text-field" id="demo-text-field">
+                        <input placeholder=" " id="input-flat" type="text">
+                        <label for="input-flat">floating label</label>
+                        <span>helper text</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="checkbox">
+                        <input type="checkbox" onclick="document.getElementById('demo-text-field').classList.toggle('filled');">
+                        <span>Filled</span>
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" onclick="document.getElementById('demo-text-field').classList.toggle('outlined');">
+                        <span>Outlined</span>
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" onclick="document.getElementById('demo-text-field').classList.toggle('error');">
+                        <span>Error text</span>
+                    </label>
+                </div>
             </div>
         </div>
 

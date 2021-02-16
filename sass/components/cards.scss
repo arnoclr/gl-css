@@ -5,7 +5,6 @@ div.card {
     background-color: var(--color-background);
 
     &.elevated {
-        background-color: var(--color-background-alt);
         box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
     }
 
@@ -13,4 +12,10 @@ div.card {
         border: 1px solid rgb(150 150 150 / 30%);
     }
 
+}
+
+body.dark div.card {
+    &.elevated {
+        background-color: var(--color-background-alt);
+    }
 }
