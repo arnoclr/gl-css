@@ -17,7 +17,9 @@ $background: rgb(150 150 150 / 15%);
 
     &:not(.hidden) {
         div {
-            transition: 350ms ease;
+            margin-left: 0;
+            width: auto;
+            transition: margin-left 350ms ease, width 500ms ease;
         }
 
         .indeterminate {
@@ -44,43 +46,43 @@ $background: rgb(150 150 150 / 15%);
 @keyframes linear-indeterminate {
     0% {
         width: 0%;
-        left: 0%;
+        margin-left: 0%;
         animation-timing-function: ease-in;
     }
 
     25% {
         width: 70%;
-        left: 30%;
+        margin-left: 30%;
         animation-timing-function: linear;
     }
 
     50% {
         width: 0%;
-        left: 100%;
+        margin-left: 100%;
         animation-timing-function: ease-out;
     }
 
     50.0001% {
-        left: 0%;
+        margin-left: 0%;
         width: 0%;
         animation-timing-function: linear;
     }
 
     65% {
-        left: 0%;
+        margin-left: 0%;
         width: 70%;
         animation-timing-function: linear;
     }
 
     80% {
         width: 0%;
-        left: 100%;
+        margin-left: 100%;
         animation-timing-function: ease-out;
     }
 
     100% {
         width: 0%;
-        left: 100%;
+        margin-left: 100%;
         animation-timing-function: linear;
     }
 }
@@ -93,7 +95,7 @@ $background: rgb(150 150 150 / 15%);
 	}
 	100% {
 		stroke-dasharray: 80;
-		stroke-dashoffset: -95;
+		stroke-dashoffset: -100;
 	}
 }
 
