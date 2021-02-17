@@ -2,4 +2,15 @@
     &.elevated {
         box-shadow: 0 1px 8px #aaa;
     }
+
+    &.fixed {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background-color: var(--color-background);
+    }
+
+    .row {
+        padding-bottom: 16px;
+    }
 }

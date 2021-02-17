@@ -29,22 +29,74 @@ header {
         .wrapper {
             height: 48px;
             padding: 8px;
-
-            span.brand {
-                color: var(--color-background-text-alt);
-                @include font('Google Sans');
-                font-size: 22px;
-                display: inline-block;
-                margin: 10px 16px;
-                vertical-align: top; 
-            }
+            display: flex;
+            flex-direction: row;
+            justify-items: center;
+            justify-content: space-between;
 
             .left {
-                display: inline-block;
+                .btn {
+                    display: inline-flex;
+                }
+
+                span.brand {
+                    color: var(--color-background-text-alt);
+                    @include font('Google Sans');
+                    font-size: 22px;
+                    display: inline-flex;
+                    margin: 10px 16px;
+                    vertical-align: top; 
+                }
+            }
+
+            .search-bar {
+                position: relative;
+                flex-grow: 2;
+                margin: 0 16px;
+                max-width: 50vw;
+
+                @include for-small-only() {
+                    display: none;
+                }
+
+                .btn {
+                    position: absolute;
+                    display: inline-flex;
+
+                    &.left {
+                        left: 0;
+                    }
+                    
+                    &.right {
+                        right: 0;
+                    }
+                }
+
+                input {
+                    height: 100%;
+                    width: 100%;
+                    padding-left: 56px;
+                    border: none;
+                    outline: none;
+                    border-radius: var(--medium-radius);
+                    background-color: rgb(150 150 150 / 20%);
+                    @include font('Google Sans');
+                    font-size: 16px;
+                    font-weight: normal;
+
+                    &:focus {
+                        background-color: transparent;
+                        box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+                    }
+                }
             }
 
             .toolbar {
-                float: right;
+                justify-content: flex-end;
+
+                .btn {
+                    display: inline-flex;
+                }
             }
 
             .btn {
@@ -55,7 +107,7 @@ header {
         &.colored {
             background: var(--color-primary);
 
-            span.brand, .btn i {
+            .left span.brand, .btn i {
                 color: var(--color-primary-text);
             }
         }

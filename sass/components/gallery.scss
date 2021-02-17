@@ -1,0 +1,18 @@
+.gallery { 
+    column-count: 2;
+    column-gap: 1em;
+
+    @include for-small-only() {
+        column-count: 1;
+    }
+
+    @include for-large-up() {
+        column-count: 3;
+    }
+      
+    .gallery-item {
+        display: inline-block;
+        margin: 0 0 1em;
+        width: 100%;
+    }
+}

@@ -1,15 +1,32 @@
 div.card {
-
-    padding: 12px;
-    border-radius: 8px;
+    border-radius: var(--medium-radius);
     background-color: var(--color-background);
 
-    &.elevated {
+    &.elevated, &.hoverable:hover {
         box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
     }
 
     &.outlined {
         border: 1px solid rgb(150 150 150 / 30%);
+    }
+
+    &.padding {
+        padding: 12px;
+    }
+
+    &.margin {
+        margin: 2px 4px;
+    }
+
+    img {
+        border-top-left-radius: var(--medium-radius);
+        border-top-right-radius: var(--medium-radius);
+        width: 100%;
+        height: auto;
+    }
+
+    p {
+        padding: 12px;
     }
 
 }

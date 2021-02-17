@@ -70,3 +70,19 @@ body {
         background: #555; 
     }
 }
+
+.mt {
+    margin-top: 16px;
+}
+
+.mb {
+    margin-bottom: 16px;
+}
+
+.align-right {
+    float: right;
+}
+
+.inline-flex>* {
+    display: inline-flex !important;
+}

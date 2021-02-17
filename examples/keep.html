@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.css">
+    <script defer src="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.js"></script>
+
+    <style>
+        :root {
+            --color-secondary: #feefc3;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-app-bar fixed">
+        <div class="wrapper">
+            <div class="left">
+                <button class="btn icon js-drawer-trigger"><i class="material-icons">menu</i></button>
+                <span class="brand">Keep</span>
+            </div>
+            <div class="search-bar">
+                <a class="btn icon left"><i class="material-icons">search</i></a>
+                <input type="search" placeholder="search">
+                <a class="btn icon right"><i class="material-icons">close</i></a>
+            </div>
+            <div class="toolbar">
+                <a class="btn icon"><i class="material-icons">refresh</i></a>
+                <a class="btn icon"><i class="material-icons">view_stream</i></a>
+                <a class="btn icon"><i class="material-icons">settings</i></a>
+                <a class="btn icon"><i class="material-icons">apps</i></a>
+            </div>
+        </div>
+    </header>
+
+    <aside class="drawer open">
+        <div role="button" class="item active">
+            <i class="material-icons">lightbulb</i>
+            <span>Notes</span>
+        </div>
+        <div role="button" class="item">
+            <i class="material-icons">notifications_none</i>
+            <span>Reminders</span>
+        </div>
+        <div role="button" class="item">
+            <i class="material-icons">edit</i>
+            <span>Edit labels</span>
+        </div>
+        <div role="button" class="item">
+            <i class="material-icons">archive</i>
+            <span>Archives</span>
+        </div>
+        <div role="button" class="item">
+            <i class="material-icons">delete</i>
+            <span>Trash</span>
+        </div>
+    </aside>
+    <div class="drawer-backdrop js-drawer-closable"></div>
+
+    <main>
+        <div class="row mt">
+            <div class="container">
+                <div class="card elevated">
+                    <input type="text" placeholder="create note" class="no-border">
+                    <div class="align-right inline-flex">
+                        <a class="btn icon"><i class="material-icons">check_box</i></a>
+                        <a class="btn icon"><i class="material-icons">brush</i></a>
+                        <a class="btn icon"><i class="material-icons">image</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row gallery">
+            <div class="gallery-item">
+                <div class="card outlined hoverable">
+                    <img src="https://via.placeholder.com/150" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, labore! Et quae commodi dolor. Repellat assumenda quisquam earum, soluta amet nostrum nulla? Soluta, mollitia? Reiciendis corrupti vero aperiam dolore repellat.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="card outlined padding hoverable">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, iste? Perferendis repellat rem, eligendi deleniti, quibusdam officiis aliquam sunt obcaecati deserunt sapiente ex ea expedita distinctio dolorum tenetur hic accusamus!
+                    Dignissimos, similique libero? Dicta officia distinctio ipsam, nam expedita velit mollitia neque, sapiente, sequi deleniti eius! Vitae mollitia animi quam magnam explicabo, in perspiciatis expedita sapiente hic! Placeat, eum deserunt.
+                    Dolor dicta consequatur nemo quod ipsum consectetur saepe unde? Vero beatae iusto nostrum. Ab, atque error. Temporibus explicabo maiores quia ducimus cupiditate tempore assumenda blanditiis eos obcaecati enim, id hic!
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="card outlined padding hoverable">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae omnis commodi iste quas sapiente veniam voluptate vel ut nesciunt repellendus harum expedita, magnam ipsum, placeat fuga similique, facilis obcaecati sequi.
+                    Ab dignissimos, unde non quasi fugit atque, distinctio dolore, maiores nihil magnam excepturi animi! Corrupti nemo tempora laboriosam praesentium odio debitis facere, inventore recusandae officiis voluptate dolorem, esse animi. Quasi!
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="card outlined padding hoverable">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum eos ut unde tempore quas, molestias cupiditate accusamus, ratione laudantium animi illum, quibusdam in vitae alias magni numquam officia magnam consequatur?
+                    Est architecto labore voluptatibus velit culpa vero dolorem impedit non. Adipisci, pariatur aliquid sed quod inventore corrupti libero! Quod commodi perferendis sed. Ipsam, hic. Placeat accusamus minima distinctio excepturi doloremque.
+                    Ea, at aliquam architecto ratione minus repellendus ipsam blanditiis? Vel aspernatur ex dolore eligendi, mollitia dolorum obcaecati eos quos? Ea, mollitia cum veritatis praesentium hic maiores explicabo aperiam consequuntur voluptatum!
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="card outlined padding hoverable" style="background-color: var(--color-secondary);">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum eos ut unde tempore quas, molestias cupiditate accusamus, ratione laudantium animi illum, quibusdam in vitae alias magni numquam officia magnam consequatur?
+                    Est architecto labore voluptatibus velit culpa vero dolorem impedit non. Adipisci, pariatur aliquid sed quod inventore corrupti libero! Quod commodi perferendis sed. Ipsam, hic. Placeat accusamus minima distinctio excepturi doloremque.
+                    Ea, at aliquam architecto ratione minus repellendus ipsam blanditiis? Vel aspernatur ex dolore eligendi, mollitia dolorum obcaecati eos quos? Ea, mollitia cum veritatis praesentium hic maiores explicabo aperiam consequuntur voluptatum!
+                </div>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>
