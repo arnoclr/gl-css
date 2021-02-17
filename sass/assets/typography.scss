@@ -1,16 +1,41 @@
-@import url('http://fonts.cdnfonts.com/css/google-sans');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Google+Sans:wght@400;500&family=Material+Icons&display=swap");
 
 body {
 
-    font-family: 'Product Sans Light', sans-serif;
+    font-family: 'Roboto', sans-serif;
 
     @include headings {
-        font-family: 'Product Sans', sans-serif;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
         color: var(--color-background-text);
     }
 
     p, small, span, li {
+        font-weight: 400;
         color: var(--color-background-text-alt);
+    }
+
+    b {
+        font-weight: 500;
+    }
+
+    .black {
+        color: #000;
+    }
+
+    p.small {
+        font-size: 14px;
+        font-weight: normal;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .small i {
+        font-size: 16px;
+    }
+
+    p>i {
+        vertical-align: -25%;
     }
 
 }

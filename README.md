@@ -1,3 +1,6 @@
+![GitHub file size in bytes](https://img.shields.io/github/size/aryqs-ipsum/gl-css/build/gl.css?label=gl.css)
+![GitHub file size in bytes](https://img.shields.io/github/size/aryqs-ipsum/gl-css/build/gl.js?label=gl.js)
+
 Google Material Design stylesheet.
 
 Discover at : https://aryqs-ipsum.github.io/gl-css/

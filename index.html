@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gl-css demo</title>
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <link rel="stylesheet" href="build/gl.css">
     <script defer src="build/gl.js"></script>
 </head>
@@ -69,6 +67,10 @@ body.dark {
             <i class="material-icons">palette</i>
             <span>Colors</span>
         </div>
+        <div id="item-theme-typography" role="button" class="item" onclick="path('theme/typography')">
+            <i class="material-icons">text_format</i>
+            <span>Typography</span>
+        </div>
         <hr>
         <div id="item-components-buttons" role="button" class="item" onclick="path('components/buttons')">
             <i class="material-icons">add_box</i>
@@ -123,15 +125,11 @@ body.dark {
             <h1>Quickstart</h1>
             <p>Use assets with CDN link :</p>
             <div class="code-wrapper">
-                <pre class="prettyprint">&#x3C;!-- Material Design icons --&#x3E;
-&#x3C;link href=&#x22;https://fonts.googleapis.com/icon?family=Material+Icons&#x22; rel=&#x22;stylesheet&#x22;&#x3E;
-
-&#x3C;!-- gl-css files --&#x3E;
-&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.css&#x22;&#x3E;
+                <pre class="prettyprint">&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.css&#x22;&#x3E;
 &#x3C;script defer src=&#x22;https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.js&#x22;&#x3E;&#x3C;/script&#x3E;</pre>
             </div>
             <p>Or download build assets on github repository :</p>
-            <a href="https://github.com/Aryqs-Ipsum/gl-css/tree/main/build">https://github.com/Aryqs-Ipsum/gl-css/tree/main/build</a>
+            <a class="btn primary ripple" href="https://github.com/Aryqs-Ipsum/gl-css/tree/main/build"><i class="material-icons">get_app</i>download</a>
         </div>
 
         <!-- /theme/ -->
@@ -169,6 +167,22 @@ body.dark {
             <div class="row">
                 <h1>Other colors</h1>
             </div>
+        </div>
+
+        <div id="theme-typography" class="row page card outlined">
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+            <p>Lorem ipsum dolor, sit amet <a href="">consectetur adipisicing</a> elit. Debitis quisquam iusto fugiat eaque obcaecati optio, non, neque voluptatibus consequatur quaerat animi? Corporis aspernatur maiores inventore ut voluptatem voluptas quae reprehenderit!
+            Corporis iste dicta ducimus incidunt aut recusandae! Tempore, natus? Repellat corporis obcaecati quasi velit, beatae ab, temporibus molestiae quo officia itaque ducimus adipisci consectetur aliquid fugit facilis provident? Iusto, explicabo.
+            Minima magni odio repellat, itaque nemo ducimus id, et, at a ex inventore. Facilis tempora dolores et excepturi doloremque eos accusantium illo nemo corporis, enim nulla, consequatur ipsa quas fugiat!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus harum deleniti ad dolores, assumenda beatae nemo cupiditate quasi repudiandae officia facilis dicta nobis, atque nihil ipsa pariatur ex iusto consequatur!
+            Sit molestiae quia tempore! Voluptates beatae fugit accusantium, reprehenderit consectetur corporis commodi, explicabo dolore, obcaecati rem non quas alias molestiae dolor adipisci provident nemo porro deserunt labore eum cum? Numquam!</p>
+            <small>Small lorem ipsum dolor sit amet</small>
+            <blockquote>La vie est un mystère qu'il faut vivre, et non un problème à résoudre.</blockquote>
         </div>
 
         <!-- /components/ -->

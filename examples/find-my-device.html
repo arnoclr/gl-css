@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find my device</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Google+Sans:wght@500&family=Material+Icons&display=swap" rel="stylesheet">
+
+    <!-- gl-css files -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.css">
+    <script defer src="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.js"></script>
+
+    <!-- theme -->
+    <style>
+        :root {
+            --color-primary: rgba(15,157,88,1);
+            --color-primary-hover: rgba(15,157,88,1);
+            --color-secondary: rgba(15,157,88,.2);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-app-bar colored fixed">
+        <div class="wrapper">
+            <span class="brand">Find my device</span>
+            <div class="toolbar">
+                <button class="btn icon"><i class="material-icons">settings</i></button>
+            </div>
+        </div>
+    </header>
+
+    <aside class="panel">
+        <div class="box elevated">
+            <div class="row">
+                <div class="col s4">
+                    <img style="padding:25px" height="100" src="https://i.ibb.co/1bwZVTt/image.png" alt="">
+                </div>
+                <div class="col s6">
+                    <h3>Google Pixel</h3>
+                    <p>Last seen just now</p>
+                    <p class="black small"><i class="material-icons">signal_wifi_0_bar</i> Bbox-GDHSND854-5GHz</p>
+                    <p class="black small"><i class="material-icons">battery_full</i> 100%</p>
+                </div>
+                <div class="col s2">
+                    <button class="btn icon"><i class="material-icons">info_outline</i></button>
+                    <button class="btn icon"><i class="material-icons">refresh</i></button>
+                </div>
+            </div>
+        </div>
+        <ul class="list">
+            <li class="button">
+                <div class="header">
+                    <i class="material-icons">phonelink_ring</i>
+                    <span>play sound</span>
+                    <i class="material-icons action">navigate_next</i>
+                </div>
+                <p>Device will ring for 5 minutes, even if set to silent.</p>
+            </li>
+            <li class="button">
+                <div class="header">
+                    <i class="material-icons">phonelink_lock</i>
+                    <span>secure device</span>
+                    <i class="material-icons action">navigate_next</i>
+                </div>
+                <p><b>Lock device and sign out of your Google Account.</b> You can also display a message or phone number on the lock screen. You can still locate the device after it's locked.</p>
+            </li>
+            <li class="button">
+                <div class="header">
+                    <i class="material-icons">phonelink_erase</i>
+                    <span>erase device</span>
+                    <i class="material-icons action">navigate_next</i>
+                </div>
+                <p><b>Erase all content from the device.</b> After your device has been erased, you can't locate it.</p>
+            </li>
+        </ul>
+    </aside>
+
+    <main>
+        <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
+    </main>
+    
+</body>
+</html>

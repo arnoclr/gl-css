@@ -1,0 +1,11 @@
+aside.panel~main {
+    margin-left: 400px;
+}
+
+aside.panel {
+    position: absolute;
+    width: 400px;
+    height: calc(100% - 64px);
+    top: 64px;
+    overflow: auto;
+}

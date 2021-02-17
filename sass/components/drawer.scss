@@ -136,6 +136,10 @@ aside.drawer {
 
         @include small-item();
 
+        &:not(:hover)::-webkit-scrollbar {
+            display: none;
+        }
+
         &:hover {
             width: 280px;
             z-index: 10;
