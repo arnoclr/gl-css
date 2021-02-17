@@ -10,7 +10,7 @@ button, input[type="submit"], input[type="reset"] {
 
 a.btn, button.btn {
     text-decoration: none;
-    @include prefix((transition: box-shadow 350ms ease), webkit);
+    @include prefix((transition: box-shadow 150ms ease), webkit);
 
     &:not(.icon) {
         height: 36px;
@@ -41,24 +41,6 @@ a.btn, button.btn {
             }
         }
 
-        &.primary {
-            background-color: var(--color-primary);
-            color: var(--color-primary-text);
-        }
-
-        &.secondary {
-            background-color: var(--color-secondary);
-            color: var(--color-secondary-text);
-        }
-
-        &.primary, &.secondary {
-            box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%);
-
-            &:hover {
-                box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 30%);
-            }
-        }
-
         &.small {
             height: 28px;
         }
@@ -84,6 +66,32 @@ a.btn, button.btn {
         i {
             color: var(--color-background-text-alt);
             font-size: 24px;
+        }
+    }
+
+    &.primary {
+        background-color: var(--color-primary);
+        color: var(--color-primary-text);
+
+        i {
+            color: var(--color-primary-text);
+        }
+
+        &:hover {
+            background-color: var(--color-primary-hover);
+        }
+    }
+
+    &.secondary {
+        background-color: var(--color-secondary);
+        color: var(--color-secondary-text);
+    }
+
+    &.primary, &.secondary {
+        box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%), 0 3px 1px -2px rgb(0 0 0 / 20%);
+
+        &:hover {
+            box-shadow: 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 30%);
         }
     }
 }
