@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="/build/gl.css">
     <script defer src="/build/gl.js"></script>
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
 </head>
 <body data-theme="light">
 
@@ -16,15 +17,15 @@
             <div class="inline-flex pt">
                 <span class="brand">Messages</span>
                 <div class="align-right">
-                    <button class="btn icon ms js-menu-trigger" data-menu="m1" data-tooltip="more options"><i class="material-icons">more_vert</i></button>
+                    <button class="btn icon ms js-menu-trigger" icon="more_vert" data-menu="m1" data-tooltip="more options"></button>
                     <div class="js-menu top-right" id="m1">
-                        <a href="">Settings</a>
-                        <a href="">Archives</a>
-                        <a href="">Spams and blocked conversations</a>
-                        <a href="">Enabled black theme</a>
-                        <a href="">Send feedback</a>
-                        <a href="">Help</a>
-                        <a href="">Logout</a>
+                        <a href="#!">Settings</a>
+                        <a href="#!">Archives</a>
+                        <a href="#!">Spams and blocked conversations</a>
+                        <a href="#!">Enabled black theme</a>
+                        <a href="#!">Send feedback</a>
+                        <a href="#!">Help</a>
+                        <a href="#!">Logout</a>
                     </div>
                 </div>
                 <button class="btn extended primary"><i class="material-icons">message</i> Start a discussion</button>
@@ -113,21 +114,71 @@
                     <span class="text">John Doe</span>
                 </div>
                 <div class="toolbar">
-                    <button class="btn icon"><i class="material-icons">videocam</i></button>
-                    <button class="btn icon"><i class="material-icons">notifications_none</i></button>
-                    <button class="btn icon js-menu-trigger" data-menu="m2" data-tooltip="options"><i class="material-icons">more_vert</i></button>
+                    <button class="btn icon" icon="videocam"></button>
+                    <button class="btn icon" icon="notifications_none"></button>
+                    <button class="btn icon js-menu-trigger" data-menu="m2" data-tooltip="options" icon="more_vert"></button>
                     <div class="js-menu top-right" id="m2">
-                        <a href="">Information</a>
-                        <a href="">Archive</a>
-                        <a href="">Delete</a>
-                        <a href="">Send feedback</a>
-                        <a href="">Help</a>
+                        <a href="#!">Information</a>
+                        <a href="#!">Archive</a>
+                        <a href="#!">Delete</a>
+                        <a href="#!">Send feedback</a>
+                        <a href="#!">Help</a>
                     </div>
                 </div>
             </div>
         </header>
-        .
+        <div class="chat-box" avatar-left>
+            <div class="chat-feed">
+                <div class="chat-row" timestamp="31 min">
+                    <img src="https://picsum.photos/48" alt="" class="avatar">
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                    <span>Lorem ipsum elit.</span>
+                </div>
+                <div class="chat-timestamp">
+                    <span>Monday 16 february at 1:06PM</span>
+                </div>
+                <div class="chat-row alt" timestamp="5 january 2020">
+                    <span>Lorem amet consectetur adipisicing elit.</span>
+                </div>
+                <div class="chat-row" timestamp="5 january 2020">
+                    <img src="https://picsum.photos/48" alt="" class="avatar">
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore eligendi voluptatem consectetur enim, officia voluptatum. 🥰</span>
+                </div>
+                <div class="chat-row alt" timestamp="3 january 2020">
+                    <span>Lorem amet consectetur adipisicing elit.</span>
+                    <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, minima!</span>
+                </div>
+                <div class="chat-timestamp">
+                    <span>Saturday 1 january at 5:56AM</span>
+                </div>
+                <div class="chat-row" timestamp="17 december 2019">
+                    <img src="https://picsum.photos/48" alt="" class="avatar">
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                    <span>Lorem ipsum dolor sit amet consectetur.</span>
+                    <span>sit amet consectetur adipisicing elit. Corrupti, minima!</span>
+                </div>
+                <div class="chat-row alt" timestamp="16 december 2019">
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ex tempore quae! Qui, labore necessitatibus aut quo assumenda quia! Nobis est voluptatibus voluptatum laborum corporis, voluptatem amet praesentium nihil in.</span>
+                    <span>🤣</span>
+                </div>
+            </div>
+            <div class="chat-input">
+                <div class="card elevated">
+                    <input type="text" placeholder="SMS" class="no-border">
+                    <div class="align-right inline-flex">
+                        <button class="btn icon" icon="insert_emoticon"></button>
+                        <button class="btn icon" icon="gif"></button>
+                        <button class="btn icon" icon="image"></button>
+                        <button class="btn icon" icon="send"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <script>
+        twemoji.parse(document.body);
+    </script>
     
 </body>
 </html>
