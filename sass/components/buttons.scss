@@ -69,6 +69,19 @@ a.btn, button.btn {
         }
     }
 
+    &.extended {
+        margin: 16px 0 16px 24px;
+        padding: 0 16px;
+        height: 48px;
+        border-radius: 25px;
+        font: 400 15px/20px "Google Sans";
+        text-transform: none;
+
+        i {
+            margin-right: 12px;
+        }
+    }
+
     &.primary {
         background-color: var(--color-primary);
         color: var(--color-primary-text);

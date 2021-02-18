@@ -1,0 +1,60 @@
+.js-menu {
+    position: absolute;
+    display: block !important;
+    height: auto;
+    width: auto;
+    transform: scale(0);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: var(--color-background);
+    box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
+    border-radius: var(--medium-radius);
+    transition: transform 250ms ease-in-out;
+
+    &.top-right {
+        top: 16px;
+        right: 16px;
+        transform-origin: top right;
+    }
+
+    &.top-left {
+        top: 16px;
+        left: 16px;
+        transform-origin: top left;
+    }
+
+    &.bottom-right {
+        bottom: 16px;
+        right: 16px;
+        transform-origin: bottom right;
+    }
+
+    &.bottom-left {
+        bottom: 16px;
+        left: 16px;
+        transform-origin: bottom left;
+    }
+
+    a {
+        padding: 0 24px;
+        line-height: 48px;
+        height: 48px;
+        display: block;
+        text-decoration: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: var(--color-background-text);
+        font-family: "Roboto",Helvetica Neue,sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+
+        &:hover {
+            background-color: rgb(150 150 150 / 15%);
+        }
+    }
+
+    &.open {
+        transform: scale(1);
+    }
+}
