@@ -96,20 +96,23 @@ window.addEventListener('DOMContentLoaded', e => {
         t.addEventListener('click', e => {
             m = document.getElementById(t.dataset.menu)
             m.classList.add('open')
-            window.addEventListener('click', e => {
-                if (!m.contains(e.target)) {
-                    a = false
-                    e.path.some(p => {
-                        if (p.classList != undefined && p.classList.contains('js-menu-trigger')) {
-                            return a = true
-                        }
-                    })
-                    if (!a) {
-                        m.classList.remove('open')
-                    }
-                }
-            })
+            window.addEventListener('click', _toggle_menu)
         })
     })
+
+    function _toggle_menu(e) {
+        if (!m.contains(e.target)) {
+            a = false
+            e.path.some(p => {
+                if (p.classList != undefined && p.classList.contains('js-menu-trigger')) {
+                    return a = true
+                }
+            })
+            if (!a) {
+                window.removeEventListener('click', _toggle_menu)
+                m.classList.remove('open')
+            }
+        }
+    }
 
 })
