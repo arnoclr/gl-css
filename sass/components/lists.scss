@@ -2,8 +2,11 @@ ul.list {
     padding-inline-start: 0px;
     margin-block-start: 0px;
     margin-block-end: 0px;
-    // margin-top: -1.2em;
     list-style-type: none;
+
+    &.no-top-margin {
+        margin-top: -1.2em;
+    }
 
     li {
         padding-left: 20px;
