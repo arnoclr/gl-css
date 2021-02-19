@@ -18,7 +18,7 @@ CDN link is auto-updated, if you want to keep the same version and change it man
 
 ## Find my device
 
-![find my device](https://i.imgur.com/1YqvoUc.png)
+![find my device](https://i.imgur.com/1YqvoUcl.png)
 Side panel with actions list, and fullscreen map.
 
 [![screenshot](https://i.imgur.com/au9mpmH.png)](https://i.imgur.com/1YqvoUc.png)
@@ -26,7 +26,7 @@ Side panel with actions list, and fullscreen map.
 
 ## Keep
 
-![notes web app](https://i.imgur.com/qExQmcz.png)
+![notes web app](https://i.imgur.com/qExQmczl.png)
 Masonry grid ordered cards, with responsive drawer.
 
 [![screenshot](https://i.imgur.com/au9mpmH.png)](https://i.imgur.com/qExQmcz.png)
@@ -34,7 +34,7 @@ Masonry grid ordered cards, with responsive drawer.
 
 ## Messages
 
-![messages web app](https://i.imgur.com/DkE09FL.png)
+![messages web app](https://i.imgur.com/DkE09FLl.png)
 Messaging app interface, with contact panel, avatars and bubbles.
 
 [![screenshot](https://i.imgur.com/au9mpmH.png)](https://i.imgur.com/DkE09FL.png)
