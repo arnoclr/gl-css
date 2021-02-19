@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keep</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.css">
-    <script defer src="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.js"></script>
+    <link rel="stylesheet" href="/build/gl.css">
+    <script defer src="/build/gl.js"></script>
 
     <style>
         :root {
@@ -29,10 +29,14 @@
                 <a class="btn icon right"><i class="material-icons">close</i></a>
             </div>
             <div class="toolbar">
-                <a class="btn icon"><i class="material-icons">refresh</i></a>
-                <a class="btn icon"><i class="material-icons">view_stream</i></a>
-                <a class="btn icon"><i class="material-icons">settings</i></a>
-                <a class="btn icon"><i class="material-icons">apps</i></a>
+                <button class="btn icon js-menu-trigger" data-menu="m1" icon="refresh"></button>
+                <button class="btn icon js-menu-trigger" data-menu="m1" icon="view_stream"></button>
+                <button class="btn icon js-menu-trigger" data-menu="m1" icon="settings"></button>
+                <button class="btn icon js-menu-trigger" data-menu="m1" data-tooltip="settings" icon="apps"></button>
+                <div class="js-menu top-right" id="m1">
+                    <a target="_blank" href="https://github.com/Aryqs-Ipsum/gl-css/issues/new">Report issue</a>
+                    <a target="_blank" href="https://github.com/Aryqs-Ipsum/gl-css">Github</a>
+                </div>
             </div>
         </div>
     </header>

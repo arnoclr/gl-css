@@ -7,8 +7,8 @@
     <title>Find my device</title>
 
     <!-- gl-css files -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.css">
-    <script defer src="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.js"></script>
+    <link rel="stylesheet" href="/build/gl.css">
+    <script defer src="/build/gl.js"></script>
 
     <!-- theme -->
     <style>
@@ -24,10 +24,16 @@
     <header class="top-app-bar colored fixed">
         <div class="wrapper">
             <div class="left">
+                <button class="btn icon js-show-panel" icon="arrow_back"></button>
                 <span class="brand">Find my device</span>
             </div>
             <div class="toolbar">
-                <button class="btn icon"><i class="material-icons">settings</i></button>
+                <button class="btn icon js-hide-panel contextual" data-tooltip="open map" icon="launch"></button>
+                <button class="btn icon js-menu-trigger" data-menu="m1" icon="settings"></button>
+                <div class="js-menu top-right" id="m1">
+                    <a target="_blank" href="https://github.com/Aryqs-Ipsum/gl-css/issues/new">Report issue</a>
+                    <a target="_blank" href="https://github.com/Aryqs-Ipsum/gl-css">Github</a>
+                </div>
             </div>
         </div>
     </header>

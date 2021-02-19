@@ -12,7 +12,7 @@ header {
         
         &.elevated {
             @include box-shadow(
-                0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 20%)
+                0 8px 6px -6px rgba(60,64,67,0.15)
             );
         }
 
@@ -100,7 +100,7 @@ header {
                 }
             }
 
-            .btn {
+            .btn, .btn::after {
                 color: var(--color-background-text-alt);
             }
         }
@@ -108,7 +108,7 @@ header {
         &.colored {
             background: var(--color-primary);
 
-            .left span.brand, .btn i {
+            .left span.brand, .btn i, .btn::after {
                 color: var(--color-primary-text);
             }
         }

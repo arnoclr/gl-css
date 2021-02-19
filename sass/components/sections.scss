@@ -1,0 +1,14 @@
+aside.section {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 400px;
+
+    &.right {
+        right: 0;
+    }
+
+    @include for-medium-down() {
+        width: 100%;
+    }
+}

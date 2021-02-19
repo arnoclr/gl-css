@@ -8,7 +8,6 @@ aside.panel {
     width: 100%;
     height: 100%;
     top: 0;
-    z-index: 8;
     overflow: auto;
     border-right: 1px solid rgb(150 150 150 / 15%);
 
@@ -22,4 +21,38 @@ aside.panel {
 header.top-app-bar.fixed~aside.panel {
     height: calc(100% - 64px);
     top: 64px;
+}
+
+@include for-large-up() {
+    .js-show-panel, .js-hide-panel.contextual {
+        display: none !important;
+    }
+}
+
+@include for-medium-down() {
+    aside.panel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 100% !important;
+        width: 100vw;
+        height: 100%;
+
+        &.close {
+            margin-left: -100vw;
+        }
+
+        &:not(.close)~main {
+            margin-left: 100vw !important;
+        }
+
+        &~main {
+            width: 100%;
+            margin-left: 0 !important;
+        }
+    }
+
+    body {
+        overflow-x: hidden;
+    }
 }

@@ -12,7 +12,7 @@ Discover at : https://aryqs-ipsum.github.io/gl-css/
 <script defer src="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.js"></script>
 ```
 
-CDN link is auto-updated, if you want to keep the same version and change it manually, you can upload the files to the `/build` folder.
+CDN link is auto-updated, if you want to keep the same version and change it manually, you can download the files from the `/build` folder.
 
 # Examples
 

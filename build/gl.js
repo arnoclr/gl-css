@@ -2,6 +2,7 @@ var gl = {
 
     "_b": document.querySelector('body'),
     "_lst": "gl-css-theme",
+    "_pan": document.querySelector('aside.panel'),
 
     "appendThemeToBody": function(x) {
         function rd() {
@@ -122,11 +123,21 @@ var gl = {
         })
 
         // panel
-
-        var _pan = document.querySelector('aside.panel')
-        if (_pan.dataset.width) {
-            _pan.style.maxWidth = _pan.dataset.width
-            document.querySelector('main').style.marginLeft = _pan.dataset.width
+        if(gl._pan) {
+            var _pan_show_ts = document.querySelectorAll('.js-show-panel'),
+                _pan_hide_ts = document.querySelectorAll('.js-hide-panel')
+            if (gl._pan.dataset.width) {
+                gl._pan.style.maxWidth = gl._pan.dataset.width
+                document.querySelector('main').style.marginLeft = gl._pan.dataset.width
+            }
+            _pan_show_ts.forEach(s => {
+                s.addEventListener('click', gl.openPanel)
+            })
+            _pan_hide_ts.forEach(h => {
+                h.addEventListener('click', e => {
+                    gl.openPanel(e, false)
+                })
+            })
         }
 
         // menus
@@ -146,6 +157,14 @@ var gl = {
             m.removeEventListener('click', gl.stopPropagation)
             window.removeEventListener('click', _toggle_menu)
             m.classList.remove('open')
+        }
+    },
+
+    "openPanel": function(e, open = true) {
+        if(open) {
+            gl._pan.classList.remove('close')
+        } else {
+            gl._pan.classList.add('close')
         }
     },
 
