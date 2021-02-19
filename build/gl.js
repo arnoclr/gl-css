@@ -134,35 +134,34 @@ var gl = {
             _men_tr = document.querySelectorAll('.js-menu-trigger')
         _men_tr.forEach(t => {
             t.addEventListener('click', e => {
+                gl.stopPropagation(e)
                 m = document.getElementById(t.dataset.menu)
                 m.classList.add('open')
+                m.addEventListener('click', gl.stopPropagation)
                 window.addEventListener('click', _toggle_menu)
             })
         })
 
         function _toggle_menu(e) {
-            if (!m.contains(e.target)) {
-                a = false
-                e.path.some(p => {
-                    if (p.classList != undefined && p.classList.contains('js-menu-trigger')) {
-                        return a = true
-                    }
-                })
-                if (!a) {
-                    window.removeEventListener('click', _toggle_menu)
-                    m.classList.remove('open')
-                }
-            }
+            m.removeEventListener('click', gl.stopPropagation)
+            window.removeEventListener('click', _toggle_menu)
+            m.classList.remove('open')
         }
     },
 
     "setTheme": function(t) {
         localStorage.setItem(gl._lst, t)
         gl.appendThemeToBody(t)
+    },
+
+    "stopPropagation": function(e) {
+        e.stopPropagation()
     }
 
 }
 
 window.addEventListener('DOMContentLoaded', e => {
-    gl.init()
+    if(document.body.dataset.noinit != '') {
+        gl.init()
+    } 
 })
