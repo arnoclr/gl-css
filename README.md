@@ -23,7 +23,7 @@ CDN link is auto-updated, if you want to keep the same version and change it man
 Side panel with actions list, and fullscreen map.
 
 [![screenshot](https://i.imgur.com/nDBLXa9.png)](https://i.imgur.com/1YqvoUc.png)
-[![visit](https://i.imgur.com/io1R0wR.png)](https://cdpn.io/_aryx_/debug/KKNmJRM/vWMRwGRBWwyr)
+[![visit](https://i.imgur.com/io1R0wR.png)](https://codepen.io/_aryx_/full/KKNmJRM)
 
 ## Keep
 
@@ -32,7 +32,7 @@ Side panel with actions list, and fullscreen map.
 Masonry grid ordered cards, with responsive drawer.
 
 [![screenshot](https://i.imgur.com/nDBLXa9.png)](https://i.imgur.com/qExQmcz.png)
-[![visit](https://i.imgur.com/io1R0wR.png)](https://cdpn.io/_aryx_/debug/rNWmEQo/yoAZEpOjGgbr)
+[![visit](https://i.imgur.com/io1R0wR.png)](https://codepen.io/_aryx_/full/rNWmEQo)
 
 ## Messages
 
@@ -41,7 +41,7 @@ Masonry grid ordered cards, with responsive drawer.
 Messaging app interface, with contact panel, avatars and bubbles.
 
 [![screenshot](https://i.imgur.com/nDBLXa9.png)](https://i.imgur.com/DkE09FL.png)
-[![visit](https://i.imgur.com/io1R0wR.png)](https://cdpn.io/_aryx_/debug/rNWwMQV/ZorBaLzPoBvM)
+[![visit](https://i.imgur.com/io1R0wR.png)](https://codepen.io/_aryx_/full/rNWwMQV)
 
 You can find more examples at https://codepen.io/collection/XkKWVv
 
