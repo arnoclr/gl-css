@@ -5,502 +5,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gl-css demo</title>
+    <title>gl css</title>
 
-    <link rel="stylesheet" href="build/gl.css">
-    <script defer src="build/gl.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.css">
+    <script defer src="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.js"></script>
 </head>
 
-<body data-theme="auto">
+<body>
 
-    <aside class="js-modal js-modal-closable" id="modal-colors-vars">
-        <div class="content">
-            <div class="code-wrapper">
-                <pre class="prettyprint">:root {
-    --color-primary: #1a73e8;
-    --color-primary-hover: #185abc;
-    --color-primary-text: #fff;
-    --color-secondary: #e8f0fe;
-    --color-secondary-hover: #e8f0fe;
-    --color-secondary-text: #000;
-    --color-background: #fff;
-    --color-background-alt: #fafafa;
-    --color-background-text: #212121;
-    --color-background-text-alt: #5f6368;
-}
+    <header class="top-app-bar fixed"><div class="wrapper"><div class="left"><button class="btn icon ripple js-drawer-trigger" icon="menu"></button><span class="brand">gl css</span></div><div class="right"><div class="js-circular-loader" id="router-loader"></div></div></div></header><aside class="drawer"></aside><div class="drawer-backdrop js-drawer-closable"></div><main style="padding:16px;min-height:90vh"></main>
 
-body.dark {
-    --color-secondary: #5c80bf;
-    --color-secondary-text: #fff;
-    --color-background: #202124;
-    --color-background-alt: #313235;
-    --color-background-text: #e8eaed;
-    --color-background-text-alt: #9aa0a6;
-}</pre>
-            </div>
-            <button class="btn ripple js-modal-close">close</button>
-        </div>
-    </aside>
-
-    <header id="topbar" class="top-app-bar fixed elevated colored">
-        <div class="wrapper">
-            <div class="left">
-                <button class="btn icon js-drawer-trigger"><i class="material-icons">menu</i></button>
-                <span class="brand">gl css</span>
-            </div>
-            <div class="toolbar">
-                <a href="#!" class="btn icon"><i class="material-icons">settings</i></a>
-            </div>
-        </div>
-    </header>
-
-    <aside class="drawer open">
-        <div id="item-guide-intro" role="button" class="item active" onclick="path('guide/intro')">
-            <i class="material-icons">lightbulb</i>
-            <span>Introduction</span>
-        </div>
-        <div id="item-guide-quickstart" role="button" class="item" onclick="path('guide/quickstart')">
-            <i class="material-icons">download</i>
-            <span>Get Started</span>
-        </div>
-        <hr>
-        <div id="item-theme-colors" role="button" class="item" onclick="path('theme/colors')">
-            <i class="material-icons">palette</i>
-            <span>Colors</span>
-        </div>
-        <div id="item-theme-typography" role="button" class="item" onclick="path('theme/typography')">
-            <i class="material-icons">text_format</i>
-            <span>Typography</span>
-        </div>
-        <hr>
-        <div id="item-components-buttons" role="button" class="item" onclick="path('components/buttons')">
-            <i class="material-icons">add_box</i>
-            <span>Buttons</span>
-        </div>
-        <div id="item-components-checkbox" role="button" class="item" onclick="path('components/checkbox')">
-            <i class="material-icons">check_box</i>
-            <span>Checkbox</span>
-        </div>
-        <div id="item-components-drawer" role="button" class="item" onclick="path('components/drawer')">
-            <i class="material-icons" style="transform: rotate(180deg);">view_sidebar</i>
-            <span>Drawer</span>
-        </div>
-        <div id="item-components-loaders" role="button" class="item" onclick="path('components/loaders')">
-            <i class="material-icons">hourglass_top</i>
-            <span>Loaders</span>
-        </div>
-        <div id="item-components-text-fields" role="button" class="item" onclick="path('components/text-fields')">
-            <i class="material-icons">text_fields</i>
-            <span>Text Fields</span>
-        </div>
-        <div id="item-components-top-app-bar" role="button" class="item" onclick="path('components/top-app-bar')">
-            <i class="material-icons" style="transform: rotate(180deg);">call_to_action</i>
-            <span>Top App Bar</span>
-        </div>
-        <a href="https://github.com/Aryqs-Ipsum/gl-css" class="bottom">Github repository</a>
-    </aside>
-    <div class="drawer-backdrop js-drawer-closable"></div>
-
-    <main class="padding top-app-bar-fixed">
-
-        <div id="error-404" class="row page car outlined">
-            <h1>404</h1>
-            <p>Requested page not found</p>
-        </div>
-
-        <!-- /guide/ -->
-
-        <div id="guide-intro" class="row page">
-            <img height="360" style="object-fit: cover; max-height: 360px; width: 100%;"
-                class="rounded loading" src="https://repository-images.githubusercontent.com/337652584/a2564a80-73ae-11eb-88c4-69ee142dc037" alt="repository social preview">
-            <div class="card outlined">
-                <h1>gl css</h1>
-                <p>gl css is a material design framework inspired by new google rounded style. It includes lots of easy to use components to quickly develop web interfaces.</p>
-                <div style="text-align: center;">
-                    <button class="btn primary large" onclick="path('guide/quickstart');">get started</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="guide-quickstart" class="row page card outlined">
-            <h1>Quickstart</h1>
-            <p>Use assets with CDN link :</p>
-            <div class="code-wrapper">
-                <pre class="prettyprint">&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.css&#x22;&#x3E;
-&#x3C;script defer src=&#x22;https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.js&#x22;&#x3E;&#x3C;/script&#x3E;</pre>
-            </div>
-            <p>Or download build assets on github repository :</p>
-            <a class="btn primary ripple" href="https://github.com/Aryqs-Ipsum/gl-css/tree/main/build"><i class="material-icons">get_app</i>download</a>
-        </div>
-
-        <!-- /theme/ -->
-
-        <div id="theme-colors" class="page card outlined">
-            <div class="row relative">
-                <button data-tooltip="open css variables" class="btn icon js-modal-trigger" style="position:absolute;top:-8px;right:8px;" icon="code" data-modal="modal-colors-vars"></button>
-                <h1>Theme colors</h1>
-                <div class="col s6 m4 color-parcel" style="background: var(--color-primary);">
-                    <p style="color: var(--color-primary-text)">Primary color</p>
-                </div>
-                <div class="col s6 m4 color-parcel" style="background: var(--color-secondary);">
-                    <p style="color: var(--color-secondary-text)">Secondary color</p>
-                </div>
-                <div class="col s6 m4 color-parcel"
-                    style="background: var(--color-background);border: 1px solid rgb(150 150 150 / 15%)">
-                    <p style="color: var(--color-background-text)">Text on background color</p>
-                </div>
-                <div class="col s6 m4 color-parcel" style="background: var(--color-background-alt);">
-                    <p style="color: var(--color-background-text-alt)">Alt text on background alt color</p>
-                </div>
-                <div class="col s6 m4 color-parcel loading">
-                    <p style="color: var(--color-background-text)">loading state</p>
-                </div>
-            </div>
-            
-            <div class="row">
-                <label class="checkbox">
-                    <input type="checkbox" id="dark-mode-input"
-                    onclick="document.querySelector('body').classList.toggle('dark')">
-                    <span>Dark mode</span>
-                </label>
-            </div>
-
-            <div class="row">
-                <h1>Other colors</h1>
-            </div>
-        </div>
-
-        <div id="theme-typography" class="row page card outlined">
-            <h1>Heading 1</h1>
-            <h2>Heading 2</h2>
-            <h3>Heading 3</h3>
-            <h4>Heading 4</h4>
-            <h5>Heading 5</h5>
-            <h6>Heading 6</h6>
-            <p>Lorem ipsum dolor, sit amet <a href="">consectetur adipisicing</a> elit. Debitis quisquam iusto fugiat eaque obcaecati optio, non, neque voluptatibus consequatur quaerat animi? Corporis aspernatur maiores inventore ut voluptatem voluptas quae reprehenderit!
-            Corporis iste dicta ducimus incidunt aut recusandae! Tempore, natus? Repellat corporis obcaecati quasi velit, beatae ab, temporibus molestiae quo officia itaque ducimus adipisci consectetur aliquid fugit facilis provident? Iusto, explicabo.
-            Minima magni odio repellat, itaque nemo ducimus id, et, at a ex inventore. Facilis tempora dolores et excepturi doloremque eos accusantium illo nemo corporis, enim nulla, consequatur ipsa quas fugiat!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus harum deleniti ad dolores, assumenda beatae nemo cupiditate quasi repudiandae officia facilis dicta nobis, atque nihil ipsa pariatur ex iusto consequatur!
-            Sit molestiae quia tempore! Voluptates beatae fugit accusantium, reprehenderit consectetur corporis commodi, explicabo dolore, obcaecati rem non quas alias molestiae dolor adipisci provident nemo porro deserunt labore eum cum? Numquam!</p>
-            <small>Small lorem ipsum dolor sit amet</small>
-            <blockquote>La vie est un mystère qu'il faut vivre, et non un problème à résoudre.</blockquote>
-        </div>
-
-        <!-- /components/ -->
-
-        <div id="components-buttons" class="row page card outlined">
-            <h1>buttons</h1>
-            <p>Buttons communicate actions that users can take. They are typically placed throughout your UI, in places
-                like:
-                <ul>
-                    <li>Dialogs</li>
-                    <li>Modal windows</li>
-                    <li>Forms</li>
-                    <li>Cards</li>
-                    <li>Toolbars</li>
-                </ul>
-            </p>
-
-            <h1>types</h1>
-            <button class="btn icon ripple"><i class="material-icons">edit</i></button>
-            <button class="btn icon primary ripple"><i class="material-icons">add</i></button>
-            <div class="code-wrapper">
-                <pre class="prettyprint">&#x3C;button class=&#x22;btn icon&#x22;&#x3E;&#x3C;i class=&#x22;material-icons&#x22;&#x3E;edit&#x3C;/i&#x3E;&#x3C;/button&#x3E;</pre>
-            </div>
-
-            <h1>Styles</h1>
-            <button class="btn ripple">flat</button>
-            <button class="btn outlined ripple">outlined</button>
-            <button class="btn primary ripple">primary <i class="material-icons">add</i></button>
-            <button class="btn secondary ripple"><i class="material-icons">delete</i> secondary</button>
-            <div class="code-wrapper">
-                <pre class="prettyprint">&#x3C;button class=&#x22;btn&#x22;&#x3E;flat&#x3C;/button&#x3E;
-&#x3C;button class=&#x22;btn outlined&#x22;&#x3E;outlined&#x3C;/button&#x3E;
-&#x3C;button class=&#x22;btn primary&#x22;&#x3E;primary&#x3C;/button&#x3E;
-&#x3C;button class=&#x22;btn secondary&#x22;&#x3E;secondary&#x3C;/button&#x3E;</pre>
-            </div>
-
-            <h1>Sizes</h1>
-            <button class="btn outlined small">small</button>
-            <button class="btn outlined">medium</button>
-            <button class="btn outlined large">large</button>
-            <div class="code-wrapper">
-                <pre class="prettyprint">&#x3C;button class=&#x22;btn outlined small&#x22;&#x3E;small&#x3C;/button&#x3E;
-&#x3C;button class=&#x22;btn outlined&#x22;&#x3E;medium&#x3C;/button&#x3E;
-&#x3C;button class=&#x22;btn outlined large&#x22;&#x3E;large&#x3C;/button&#x3E;</pre>
-            </div>
-
-            <p>Also work with "a" tag</p>
-        </div>
-
-        <div id="components-checkbox" class="row page card outlined">
-            <h1>Checkbox</h1>
-            <p>Checkboxes allow users to select one or more items from a set. Checkboxes can turn an option on or off.</p>
-            
-            <label class="checkbox">
-                <input type="checkbox">
-                <span>Checkbox</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" checked>
-                <span>Checked checkbox</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" disabled>
-                <span>Disabled checkbox</span>
-            </label>
-
-            <div class="code-wrapper">
-                <pre class="prettyprint">&#x3C;label class=&#x22;checkbox&#x22;&#x3E;
-    &#x3C;input type=&#x22;checkbox&#x22;&#x3E;
-    &#x3C;span&#x3E;Checkbox&#x3C;/span&#x3E;
-&#x3C;/label&#x3E;
-&#x3C;label class=&#x22;checkbox&#x22;&#x3E;
-    &#x3C;input type=&#x22;checkbox&#x22; checked&#x3E;
-    &#x3C;span&#x3E;Checked checkbox&#x3C;/span&#x3E;
-&#x3C;/label&#x3E;
-&#x3C;label class=&#x22;checkbox&#x22;&#x3E;
-    &#x3C;input type=&#x22;checkbox&#x22; disabled&#x3E;
-    &#x3C;span&#x3E;Disabled checkbox&#x3C;/span&#x3E;
-&#x3C;/label&#x3E;</pre>
-            </div>
-        </div>
-
-        <div id="components-drawer" class="row page card outlined">
-            <h1>Drawer</h1>
-            <p>Navigation drawers are recommended for:</p>
-            <ul>
-                <li>Apps with five or more top-level destinations</li>
-                <li>Apps with two or more levels of navigation hierarchy</li>
-                <li>Quick navigation between unrelated destinations</li>
-            </ul>
-
-            <div class="code-wrapper">
-                <pre class="prettyprint">&#x3C;!-- menu button --&#x3E;
-&#x3C;button class=&#x22;btn icon js-drawer-trigger&#x22;&#x3E;&#x3C;i class=&#x22;material-icons&#x22;&#x3E;menu&#x3C;/i&#x3E;&#x3C;/button&#x3E;
-
-&#x3C;!-- drawer --&#x3E;
-&#x3C;aside class=&#x22;drawer open&#x22;&#x3E;
-    &#x3C;div role=&#x22;button&#x22; class=&#x22;item active&#x22;&#x3E;
-        &#x3C;i class=&#x22;material-icons&#x22;&#x3E;lightbulb&#x3C;/i&#x3E;
-        &#x3C;span&#x3E;Introduction&#x3C;/span&#x3E;
-    &#x3C;/div&#x3E;
-    &#x3C;div role=&#x22;button&#x22; class=&#x22;item&#x22;&#x3E;
-        &#x3C;i class=&#x22;material-icons&#x22;&#x3E;download&#x3C;/i&#x3E;
-        &#x3C;span&#x3E;Get Started&#x3C;/span&#x3E;
-    &#x3C;/div&#x3E;
-    &#x3C;hr&#x3E;
-    &#x3C;div role=&#x22;button&#x22; class=&#x22;item&#x22;&#x3E;
-        &#x3C;i class=&#x22;material-icons&#x22;&#x3E;palette&#x3C;/i&#x3E;
-        &#x3C;span&#x3E;Colors&#x3C;/span&#x3E;
-    &#x3C;/div&#x3E;
-    &#x3C;a href=&#x22;#!&#x22; class=&#x22;bottom&#x22;&#x3E;link&#x3C;/a&#x3E;
-&#x3C;/aside&#x3E;
-&#x3C;div class=&#x22;drawer-backdrop js-drawer-closable&#x22;&#x3E;&#x3C;/div&#x3E;
-
-&#x3C;!-- app content --&#x3E;
-&#x3C;main&#x3E;&#x3C;/main&#x3E;</pre>
-            </div>
-        </div>
-
-        <div id="components-loaders" class="row page card outlined">
-            <h1>Loaders</h1>
-            <p>Progress indicators inform users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates. They communicate an app’s state and indicate available actions, such as whether users can navigate away from the current screen.</p>
-            <h2>Circular</h2>
-            <div class="js-circular-loader"></div>
-            <div class="code-wrapper">
-                <pre class="prettyprint">&#x3C;div class=&#x22;js-circular-loader&#x22;&#x3E;&#x3C;/div&#x3E;
-
-&#x3C;!-- or this (if loader is needed before gl.js load) --&#x3E;
-&#x3C;svg class=&#x22;loader&#x22; width=&#x22;42&#x22; height=&#x22;42&#x22; xmlns=&#x22;http://www.w3.org/2000/svg&#x22;&#x3E;
-    &#x3C;g&#x3E;
-        &#x3C;ellipse ry=&#x22;16&#x22; rx=&#x22;16&#x22; cy=&#x22;21&#x22; cx=&#x22;21&#x22; stroke-width=&#x22;4&#x22; fill=&#x22;none&#x22;/&#x3E;
-    &#x3C;/g&#x3E;
-&#x3C;/svg&#x3E;</pre>
-            </div>
-
-            <h2>Linear</h2>
-            <div class="linear-loader" id="linear-loader-demo">
-                <div class="determinate" style="width: 25%;"></div>
-            </div>
-            <div class="text-field">
-                <input value="25" type="number" min="0" max="100" id="tf1" placeholder=" "
-                    onchange="document.querySelector('#linear-loader-demo div').style.width = this.value+'%';">
-                <label for="tf1">progress</label>
-            </div>
-            <label class="checkbox">
-                <input id="ch1" type="checkbox" onclick="trigger_determinate();">
-                <span>Indeterminate</span>
-            </label>
-            <label class="checkbox">
-                <input type="checkbox" onclick="document.getElementById('linear-loader-demo').classList.toggle('hidden');">
-                <span>Hidden</span>
-            </label>
-            <script>
-                function trigger_determinate() {
-                    if (document.getElementById('ch1').checked) {
-                        document.querySelector('#linear-loader-demo div').classList.remove('determinate');
-                        document.querySelector('#linear-loader-demo div').classList.add('indeterminate');
-                    } else {
-                        document.querySelector('#linear-loader-demo div').classList.remove('indeterminate');
-                        document.querySelector('#linear-loader-demo div').classList.add('determinate');
-                    }
-                }
-            </script>
-            <div class="code-wrapper">
-                <pre class="prettyprint">&#x3C;div class=&#x22;linear-loader&#x22;&#x3E;
-    &#x3C;div class=&#x22;indeterminate&#x22;&#x3E;&#x3C;/div&#x3E;
-&#x3C;/div&#x3E;
-
-&#x3C;div class=&#x22;linear-loader&#x22;&#x3E;
-    &#x3C;div class=&#x22;determinate&#x22; style=&#x22;width: 25%;&#x22;&#x3E;&#x3C;/div&#x3E;
-&#x3C;/div&#x3E;</pre>
-            </div>
-        </div>
-
-        <div id="components-text-fields" class="row page card outlined">
-            <h1>Text Fields</h1>
-            <p>Text fields allow users to enter text into a UI. They typically appear in forms and dialogs.</p>
-            <div class="card outlined">
-                <div class="row">
-                    <p>Interactive demo</p>
-                    <div class="text-field" id="demo-text-field">
-                        <input placeholder=" " id="input-flat" type="text">
-                        <label for="input-flat">floating label</label>
-                        <span>helper text</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <label class="checkbox">
-                        <input type="checkbox" onclick="document.getElementById('demo-text-field').classList.toggle('filled');">
-                        <span>Filled</span>
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" onclick="document.getElementById('demo-text-field').classList.toggle('outlined');">
-                        <span>Outlined</span>
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" onclick="document.getElementById('demo-text-field').classList.toggle('error');">
-                        <span>Error text</span>
-                    </label>
-                </div>
-            </div>
-        </div>
-
-        <div id="components-top-app-bar" class="row page card outlined">
-            <h1>Top app bar</h1>
-            <p>The top app bar provides content and actions related to the current screen. It’s used for branding,
-                screen titles, navigation, and actions.
-
-                It can transform into a contextual action bar.</p>
-
-            <div class="row">
-                <label class="checkbox">
-                    <input checked type="checkbox" id="topbar-elevated-input"
-                            onclick="document.getElementById('topbar').classList.toggle('elevated')">
-                    <span>Elevated</span>
-                </label>
-                <label class="checkbox">
-                    <input checked type="checkbox" id="topbar-colored-input"
-                            onclick="document.getElementById('topbar').classList.toggle('colored')">
-                    <span>Colored</span>
-                </label>
-            </div>
-
-            <div class="code-wrapper">
-                <pre class="prettyprint">&#x3C;header class=&#x22;top-app-bar fixed elevated colored&#x22;&#x3E;
-    &#x3C;div class=&#x22;wrapper&#x22;&#x3E;
-        &#x3C;div class=&#x22;left&#x22;&#x3E;
-            &#x3C;button class=&#x22;btn icon js-drawer-trigger&#x22;&#x3E;&#x3C;i class=&#x22;material-icons&#x22;&#x3E;menu&#x3C;/i&#x3E;&#x3C;/button&#x3E;
-        &#x3C;/div&#x3E;
-        &#x3C;span class=&#x22;brand&#x22;&#x3E;gl css&#x3C;/span&#x3E;
-        &#x3C;div class=&#x22;toolbar&#x22;&#x3E;
-            &#x3C;a href=&#x22;#!&#x22; class=&#x22;btn icon&#x22;&#x3E;&#x3C;i class=&#x22;material-icons&#x22;&#x3E;settings&#x3C;/i&#x3E;&#x3C;/a&#x3E;
-        &#x3C;/div&#x3E;
-    &#x3C;/div&#x3E;
-&#x3C;/header&#x3E;</pre>
-            </div>
-        </div>
-
-    </main>
-
-    <style>
-        .code-wrapper {
-            padding: 8px;
-            margin: 8px 0;
-            overflow-x: scroll;
-            overflow-y: hidden;
-            white-space: nowrap;
-            background-color: #eaeaea;
-            border-radius: var(--medium-radius);
-        }
-        .code-wrapper::-webkit-scrollbar {
-            display: none;
-        }
-
-        pre.prettyprint {
-            border: none;
-            margin: 0;
-        }
-
-        .color-parcel {
-            height: 150px;
-            position: relative;
-        }
-
-        .color-parcel p {
-            position: absolute;
-            font-family: "Google Sans", Arial, Helvetica, sans-serif;
-            bottom: 0;
-            left: 16px;
-        }
-    </style>
-
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/vs2015.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
     <script>
-        const reset = function () {
-            document.querySelectorAll('.page').forEach(p => {
-                p.style.display = 'none'
-            })
-            document.querySelectorAll('aside.drawer .item.active').forEach(i => {
-                i.classList.remove('active')
-            })
-        }
+    const routes = [
+        { path: '/guide/quickstart', icon: 'get_app', label: 'Quickstart' },
+        { path: '/components/lists', icon: 'list', label: 'Lists' },
+    ]
 
-        const path = function (path) {
-            reset()
-            var a = document.createElement('a')
-            var linkText = document.createTextNode("temp")
-            a.appendChild(linkText)
-            a.href = '#/' + path
-            document.body.appendChild(a)
-            id = path.replace('/', '-')
-            page = document.getElementById(id)
-            if (typeof (page) != 'undefined' && page != null) {
-                page.style.display = 'block'
-                document.getElementById('item-' + id).classList.add('active')
-            } else {
-                console.log('404 :', id)
-                document.getElementById('error-404').style.display = 'block';
-            }
-            a.click()
-            a.remove()
-        }
+    const main = document.querySelector('main');
+    const drawer = document.querySelector('aside.drawer');
+    const loader = document.getElementById('router-loader');
+    const parseLocation = () => location.hash.slice(1).toLowerCase() || '/';
 
-        reset()
-
-        if (window.location.hash) {
-            hash = window.location.hash.substring(2)
-            path(hash)
-        } else {
-            path('guide/intro')
+    const renderDrawer = (path = '/') => {
+        var drawerDom = '';
+        routes.forEach(r => {
+            drawerDom += 
+            `<a href="#${r.path}">
+                <div id="item-guide-quickstart" role="button" class="item ${path == r.path ? 'active' : ''}">
+                    <i class="material-icons">${r.icon}</i>
+                    <span>${r.label}</span>
+                </div>
+            </a>`;
+        })
+        drawer.innerHTML = drawerDom;
+    }
+    
+    const router = () => {
+        const path = parseLocation();
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function (data) {
+            if(xhr.readyState === XMLHttpRequest.DONE) {
+                var status = xhr.status;
+                loader.style.display = 'none';
+                if (status === 0 || (status >= 200 && status < 400)) {
+                    main.innerHTML = marked(data.srcElement.responseText);
+                    main.classList.remove('loading');
+                    renderDrawer(path);
+                    document.querySelectorAll('pre code').forEach(c => {
+                        hljs.highlightBlock(c);
+                    });
+                } else {
+                    main.innerHTML = "<h1>Error ...</h1>"
+                }
+            }     
         }
+        xhr.open('GET', `docs${path}.md`);
+        xhr.send();
+        loader.style.display = 'block'; main.innerHTML = ''; main.classList.add('loading');
+    };
 
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.getElementById('dark-mode-input').click()
-        }
+    window.addEventListener('hashchange', router);
+    window.addEventListener('load', router);
     </script>
 
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-</body>
-
-</html>
+</body></html>

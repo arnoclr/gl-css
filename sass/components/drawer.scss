@@ -28,6 +28,7 @@ aside.drawer {
         align-items: center;
         color: var(--color-background-text-alt);
         cursor: pointer;
+        text-decoration: none;
         @include prefix((border-radius: 0 25px 25px 0), webkit);
         @include prefix((transition: border-radius 150ms ease), webkit);
 
