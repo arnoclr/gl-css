@@ -29,7 +29,7 @@ body {
     overflow: hidden;
     transform: translate3d(0, 0, 0);
   
-    &:after {
+    &::before {
         content: "";
         display: block;
         position: absolute;
@@ -46,7 +46,7 @@ body {
         transition: transform .2s, opacity 1s;
     }
     
-    &:active:after {
+    &:active::before {
         transform: scale(0, 0);
         opacity: .3;
         transition: 0s;
@@ -86,6 +86,14 @@ body {
 
 .pt {
     padding-top: 16px;
+}
+
+.pa {
+    padding: 16px;
+}
+
+.ma {
+    margin: 16px;
 }
 
 .align-right {

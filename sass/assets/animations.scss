@@ -1,0 +1,18 @@
+.animated {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: scale3d(0,0,0);
+    margin-top: -100vh;
+
+    &.visible {
+        transition: transform 150ms ease-in 0s, margin 0s ease 0s;
+        transform: scale3d(1,1,1);
+        margin-top: 0;
+    }
+
+    &:not(.visible) {
+        transition: transform 150ms ease-out 0s, margin 0s ease 150ms;
+    }
+}

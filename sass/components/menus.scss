@@ -3,13 +3,14 @@
     display: block !important;
     height: auto;
     width: auto;
+    max-width: 320px;
     transform: scale3D(0, 0, 0);
     padding-top: 8px;
     padding-bottom: 8px;
     background-color: var(--color-background);
     box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
     border-radius: var(--medium-radius);
-    transition: transform 250ms ease-in-out;
+    transition: transform 150ms ease-in-out;
 
     &.top-right {
         top: 16px;
@@ -45,12 +46,29 @@
         overflow: hidden;
         text-overflow: ellipsis;
         color: var(--color-background-text);
-        font-family: "Roboto",Helvetica Neue,sans-serif;
+        font-family: var(--font-text);
         font-size: 14px;
         font-weight: 400;
 
         &:hover {
             background-color: rgb(150 150 150 / 15%);
+        }
+    }
+
+    &.icons {
+        a {
+            font: 400 1rem/1.5rem var(--font-text);
+            height: 48px;
+            line-height: 48px;
+        }
+
+        i {
+            vertical-align: middle;
+            margin-right: 12px;
+        }
+
+        i, a {
+            color: var(--color-background-text-alt);
         }
     }
 

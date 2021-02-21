@@ -138,7 +138,11 @@ var gl = {
                 _pan_hide_ts = document.querySelectorAll('.js-hide-panel')
             if(gl._pan.dataset.width) {
                 gl._pan.style.maxWidth = gl._pan.dataset.width
-                document.querySelector('main').style.marginLeft = gl._pan.dataset.width
+                if(gl._pan.classList.contains('right')) {
+                    document.querySelector('main').style.marginRight = gl._pan.dataset.width
+                } else {
+                    document.querySelector('main').style.marginLeft = gl._pan.dataset.width
+                }
             }
             _pan_show_ts.forEach(s => {
                 s.addEventListener('click', gl.openPanel)

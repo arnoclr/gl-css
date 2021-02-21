@@ -22,7 +22,7 @@ a.btn, button.btn {
         align-items: center;
         vertical-align: middle;
         text-transform: uppercase;
-        font-family: 'Roboto' ,Arial, Helvetica, sans-serif;
+        font-family: var(--font-text);
         font-size: .9rem;
         font-weight: 500;
         line-height: 32px;
@@ -75,7 +75,7 @@ a.btn, button.btn {
             content: attr(icon);
             color: var(--color-background-text-alt);
             font-size: 24px;
-            font-family: "Material Icons";
+            font-family: var(--font-icons);
         }
 
         &.animated {
@@ -92,7 +92,7 @@ a.btn, button.btn {
         padding: 0 16px;
         height: 48px;
         border-radius: 25px;
-        font: 400 15px/20px "Google Sans";
+        font: 400 15px/20px var(--font-special);
         text-transform: none;
 
         i {
@@ -133,4 +133,8 @@ a.btn, button.btn {
 
 .btn-shower:hover .btn.hidden {
     visibility: visible;
+}
+
+.btn.labeled {
+    text-align: -webkit-center;
 }

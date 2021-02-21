@@ -18,6 +18,10 @@ $element-bottom-margin: ($gutter-width*2)/3 !default;
     --small-radius: 4px;
     --medium-radius: 8px;
     --large-radius: 16px;
+
+    --font-icons: "Material Icons";
+    --font-special: "Google Sans", "Roboto", Arial, Helvetica, sans-serif;
+    --font-text: "Roboto", Arial, Helvetica, sans-serif;
 }
 
 body.dark {

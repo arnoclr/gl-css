@@ -11,6 +11,7 @@ ul.list {
     li {
         padding-left: 20px;
         padding-bottom: 8px;
+        padding-top: 12px;
         border-top: 1px solid rgb(150 150 150 / 10%);
 
         .header {
@@ -27,25 +28,21 @@ ul.list {
             span {
                 text-transform: uppercase;
                 padding-left: 16px;
-                font: normal 500 14px/24px 'Roboto',arial,sans-serif;;
+                font: normal 500 14px/24px var(--font-text);
                 color: var(--color-background-text);
             }
 
-            .action, .timestamp {
+            .action {
                 position: absolute;
                 right: 24px;
                 top: 12px;
                 color: var(--color-background-text-alt);
             }
-
-            .timestamp {
-                top: 22px;
-                font: 400 12px/16px "Roboto";
-            }
         }
 
         .content {
             display: inline-flex;
+            align-items: center;
 
             .avatar {
                 width: 40px;
@@ -55,7 +52,30 @@ ul.list {
                 display: inline-flex;
             }
 
+            i.avatar {
+                font-size: 28px;
+                justify-content: center;
+                line-height: 40px;
+
+                &.outlined {
+                    border: 1px solid rgb(150 150 150 / 15%);
+                    color: var(--color-primary);
+                }
+            }
+
             .text {
+                display: grid;
+                align-items: center;
+                position: relative;
+
+                .timestamp {
+                    position: absolute;
+                    right: 0;
+                    top: 2px;
+                    font: 400 12px/16px var(--font-text);
+                    color: var(--color-background-text-alt);
+                }
+
                 &.ellipsis span {
                     width: 200px;
                     white-space: nowrap;
@@ -63,15 +83,22 @@ ul.list {
                     text-overflow: ellipsis;
                 }
 
+                span.main {
+                    font-family: var(--font-text);
+                    font-size: 1rem;
+                    font-weight: 400;
+                    line-height: 1.5rem;
+                }
+
                 span.first {
                     color: var(--color-background-text);
-                    font: 400 15px/20px "Google Sans";
+                    font: 400 15px/20px var(--font-special);
                 }
     
                 span.second {
                     display: block;
                     color: var(--color-background-text-alt);
-                    font: 400 14px/20px "Roboto";
+                    font: 400 14px/20px var(--font-text);
                 }
             }
         }

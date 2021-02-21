@@ -11,23 +11,60 @@ aside.js-modal:not(.drawer) {
     background-color: rgb(0 0 0 / 0%);
     z-index: 10;
 
-    .content {
-        transform: scale3D(0, 0, 0);
+    &>.content {
+        transform: scale3D(.85, .85, .85);
         transition: transform 100ms cubic-bezier(0,0,1,0);
         max-width: 580px;
         max-height: 100vh;
-        padding: 16px;
         background: var(--color-background);
         border-radius: var(--large-radius);
 
         @include box-shadow(0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%));
+
+        &>.header {
+            padding: 16px;
+            border-bottom: 1px solid rgb(150 150 150 / 15%);
+
+            span {
+                font-family: var(--font-special);
+                font-size: 1rem;
+                font-weight: 500;
+                line-height: 1.5rem;
+                color: var(--color-background-text);
+                vertical-align: -webkit-baseline-middle;
+            }
+
+            .btn {
+                position: absolute;
+                right: 8px;
+                top: 8px;
+            }
+        }
+
+        .body {
+            padding: 8px 16px;
+        }
+
+        .actions {
+            border-top: 1px solid rgb(150 150 150 / 15%);
+
+            .buttons {
+                padding: 16px 28px;
+                display: flex;
+                justify-content: space-evenly;
+
+                .btn.labeled {
+                    margin: 0px 12px;
+                }
+            }
+        }
     }
 
     &.open {
         margin-top: 0;
         background-color: rgb(0 0 0 / 32%);
 
-        .content {
+        &>.content {
             transition: transform 150ms cubic-bezier(0,.4,1,1);
             transform: scale3D(1, 1, 1);
         }

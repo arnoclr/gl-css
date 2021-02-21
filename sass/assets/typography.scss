@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Google+Sans:wght@400;500&family=Material+Icons&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Google+Sans:wght@400;500&family=Material+Icons&family=Material+Icons+Outlined&display=swap");
 
 body {
 
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-text);
 
     @include headings {
-        font-family: 'Roboto', sans-serif;
+        font-family: var(--font-text);
         font-weight: 500;
         color: var(--color-background-text);
     }
@@ -23,6 +23,12 @@ body {
         color: #000;
     }
 
+    &.dark {
+        .black {
+            color: #fff;
+        }
+    }
+
     p.small {
         font-size: 14px;
         font-weight: normal;
@@ -36,6 +42,10 @@ body {
 
     p>i {
         vertical-align: -25%;
+    }
+
+    .material-icons {
+        font-family: var(--font-icons);
     }
 
 }

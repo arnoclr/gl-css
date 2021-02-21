@@ -1,5 +1,17 @@
-aside.panel~main {
-    margin-left: 400px;
+aside.panel:not(.right) {
+    &~main, &~.panel-app-content {
+        margin-left: 400px;
+    }
+}
+
+aside.panel.right {
+    &~main, &~.panel-app-content {
+        margin-right: 400px;
+    }
+}
+
+.panel-app-content {
+    position: relative;
 }
 
 aside.panel {
@@ -15,6 +27,10 @@ aside.panel {
         padding: 12px 24px 21px 24px;
         color: var(--color-background-text);
         font: 400 18px/24px "Google Sans";
+    }
+
+    &.right {
+        right: 0;
     }
 }
 
@@ -42,13 +58,17 @@ header.top-app-bar.fixed~aside.panel {
             margin-left: -100vw;
         }
 
-        &:not(.close)~main {
-            margin-left: 100vw !important;
+        &:not(.close) {
+            &~main, &~.panel-app-content {
+                margin-left: 100vw !important;
+            }
         }
 
-        &~main {
+        &~main, &~.panel-app-content {
             width: 100%;
             margin-left: 0 !important;
+            margin-right: 0 !important;
+            transition: margin 150ms ease;
         }
     }
 
