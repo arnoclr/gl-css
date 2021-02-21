@@ -19,7 +19,7 @@ var gl = {
                 rd()
                 break
             case 'auto':
-                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                     ad()
                 } else {
                     rd()
@@ -32,20 +32,20 @@ var gl = {
 
     "init": function () {
         // dark mode
-        if (gl._b && gl._b.dataset.theme) {
+        if(gl._b && gl._b.dataset.theme) {
             gl.appendThemeToBody(gl._b.dataset.theme)
         }
 
-        if (localStorage.getItem(gl._lst)) {
+        if(localStorage.getItem(gl._lst)) {
             gl.appendThemeToBody(localStorage.getItem(gl._lst))
         }
 
         // drawer
 
         var _d_t = document.querySelector('.js-drawer-trigger')
-        if (_d_t) {
+        if(_d_t) {
             _d_t.addEventListener('click', () => {
-                if (window.innerWidth < 600) {
+                if(window.innerWidth < 600) {
                     document.querySelector('aside.drawer.modal').classList.toggle('open')
                 } else {
                     document.querySelector('aside.drawer').classList.toggle('small')
@@ -54,14 +54,14 @@ var gl = {
         }
 
         var _d_c = document.querySelector('.js-drawer-closable')
-        if (_d_c) {
+        if(_d_c) {
             _d_c.addEventListener('click', () => {
                 document.querySelector('aside.drawer.modal').classList.remove('open')
             })
         }
 
         var _d_is = document.querySelectorAll('.drawer .item')
-        if (_d_is) {
+        if(_d_is) {
             _d_is.forEach(a => {
                 a.addEventListener('click', e => {
                     document.querySelectorAll('.drawer .item').forEach(i => {
@@ -75,7 +75,7 @@ var gl = {
         var _d = document.querySelector('aside.drawer')
 
         function _setDrawerMode() {
-            if (window.innerWidth < 600) {
+            if(window.innerWidth < 600) {
                 _d.classList.remove('small')
                 _d.classList.remove('open')
                 _d.classList.add('modal')
@@ -91,7 +91,7 @@ var gl = {
             }
         }
 
-        if (_d) {
+        if(_d) {
             _setDrawerMode()
             window.addEventListener('resize', _setDrawerMode)
         }
@@ -126,7 +126,7 @@ var gl = {
         if(gl._pan) {
             var _pan_show_ts = document.querySelectorAll('.js-show-panel'),
                 _pan_hide_ts = document.querySelectorAll('.js-hide-panel')
-            if (gl._pan.dataset.width) {
+            if(gl._pan.dataset.width) {
                 gl._pan.style.maxWidth = gl._pan.dataset.width
                 document.querySelector('main').style.marginLeft = gl._pan.dataset.width
             }
@@ -148,16 +148,24 @@ var gl = {
                 gl.stopPropagation(e)
                 m = document.getElementById(t.dataset.menu)
                 m.classList.add('open')
+                gl.setTabIndex(Array.prototype.slice.call(m.children), 0)
                 m.addEventListener('click', gl.stopPropagation)
-                window.addEventListener('click', _toggle_menu)
+                window.addEventListener('click', gl.closeMenus)
             })
         })
+        _men.forEach(m => {
+            gl.setTabIndex(Array.prototype.slice.call(m.children), -1)
+        })
+    },
 
-        function _toggle_menu(e) {
+    "closeMenus": function() {
+        var _ms_open = document.querySelectorAll('.js-menu.open')
+        _ms_open.forEach(m => {
             m.removeEventListener('click', gl.stopPropagation)
-            window.removeEventListener('click', _toggle_menu)
+            window.removeEventListener('click', gl.closeMenus)
             m.classList.remove('open')
-        }
+            gl.setTabIndex(Array.prototype.slice.call(m.children), -1)
+        })
     },
 
     "openPanel": function(e, open = true) {
@@ -166,6 +174,12 @@ var gl = {
         } else {
             gl._pan.classList.add('close')
         }
+    },
+
+    "setTabIndex": function(els, n) {
+        els.forEach(a => {
+            a.setAttribute('tabindex', n)
+        })
     },
 
     "setTheme": function(t) {
@@ -182,5 +196,11 @@ var gl = {
 window.addEventListener('DOMContentLoaded', e => {
     if(document.body.dataset.noinit != '') {
         gl.init()
-    } 
+    }
+})
+
+window.addEventListener('keydown', e => {
+    if(e.key === 'Escape' || e.key === 'Esc') {
+        gl.closeMenus()
+    }
 })
