@@ -3,7 +3,7 @@
     display: block !important;
     height: auto;
     width: auto;
-    transform: scale(0);
+    transform: scale3D(0, 0, 0);
     padding-top: 8px;
     padding-bottom: 8px;
     background-color: var(--color-background);
@@ -55,6 +55,6 @@
     }
 
     &.open {
-        transform: scale(1);
+        transform: scale3D(1, 1, 1);
     }
 }

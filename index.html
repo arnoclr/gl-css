@@ -11,9 +11,9 @@
     <script defer src="build/gl.js"></script>
 </head>
 
-<body class="">
+<body data-theme="auto">
 
-    <aside class="modal js-modal-closable" id="modal-colors-vars">
+    <aside class="js-modal js-modal-closable" id="modal-colors-vars">
         <div class="content">
             <div class="code-wrapper">
                 <pre class="prettyprint">:root {
@@ -38,6 +38,7 @@ body.dark {
     --color-background-text-alt: #9aa0a6;
 }</pre>
             </div>
+            <button class="btn ripple js-modal-close">close</button>
         </div>
     </aside>
 
@@ -111,7 +112,7 @@ body.dark {
 
         <div id="guide-intro" class="row page">
             <img height="360" style="object-fit: cover; max-height: 360px; width: 100%;"
-                class="rounded loading" src="https://material.io/archive/guidelines/assets/0Bx4BSt6jniD7Y1huOXVQdlFPMmM/materialdesign-introduction.png" alt="material design blue illustration">
+                class="rounded loading" src="https://repository-images.githubusercontent.com/337652584/a2564a80-73ae-11eb-88c4-69ee142dc037" alt="repository social preview">
             <div class="card outlined">
                 <h1>gl css</h1>
                 <p>gl css is a material design framework inspired by new google rounded style. It includes lots of easy to use components to quickly develop web interfaces.</p>
@@ -136,7 +137,7 @@ body.dark {
 
         <div id="theme-colors" class="page card outlined">
             <div class="row relative">
-                <a title="open css variables" class="btn icon js-modal-trigger" style="position:absolute;top:-8px;right:8px;" href="#modal-colors-vars"><i class="material-icons">code</i></a>
+                <button data-tooltip="open css variables" class="btn icon js-modal-trigger" style="position:absolute;top:-8px;right:8px;" icon="code" data-modal="modal-colors-vars"></button>
                 <h1>Theme colors</h1>
                 <div class="col s6 m4 color-parcel" style="background: var(--color-primary);">
                     <p style="color: var(--color-primary-text)">Primary color</p>

@@ -100,19 +100,29 @@ var gl = {
 
         document.querySelectorAll('.js-modal-trigger').forEach(a => {
             a.addEventListener('click', () => {
-                document.querySelector(a.getAttribute("href")).classList.add('open')
+                h = a.getAttribute("href")
+                if(h) {
+                    id = h.substring(1)
+                } else {
+                    id = a.dataset.modal
+                }
+                if(id) {
+                    document.getElementById(id).classList.add('open')
+                    document.querySelector('#' + id + ' .content').setAttribute('tabindex', 0)
+                }
             })
         })
 
-        document.querySelectorAll('aside.modal .content').forEach(e => {
+        document.querySelectorAll('aside.js-modal .content').forEach(e => {
+            e.setAttribute('tabindex', -1)
             e.addEventListener('click', e => {
-                e.stopPropagation()
+                gl.stopPropagation(e)
             })
         })
 
         document.querySelectorAll('.js-modal-closable, .js-modal-close').forEach(e => {
             e.addEventListener('click', () => {
-                e.classList.remove('open')
+                gl.closeModals()
             })
         })
 
@@ -159,12 +169,22 @@ var gl = {
     },
 
     "closeMenus": function() {
-        var _ms_open = document.querySelectorAll('.js-menu.open')
-        _ms_open.forEach(m => {
+        document.querySelectorAll('.js-menu.open').forEach(m => {
             m.removeEventListener('click', gl.stopPropagation)
             window.removeEventListener('click', gl.closeMenus)
             m.classList.remove('open')
             gl.setTabIndex(Array.prototype.slice.call(m.children), -1)
+        })
+    },
+
+    "closeModals": function() {
+        document.querySelectorAll('.js-modal.open').forEach(m => {
+            m.removeEventListener('click', gl.stopPropagation)
+            window.removeEventListener('click', gl.closeMenus)
+            m.classList.remove('open')
+        })
+        document.querySelectorAll('.js-modal .content').forEach(c => {
+            c.setAttribute('tabindex', -1)
         })
     },
 

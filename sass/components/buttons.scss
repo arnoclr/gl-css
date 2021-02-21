@@ -77,6 +77,14 @@ a.btn, button.btn {
             font-size: 24px;
             font-family: "Material Icons";
         }
+
+        &.animated {
+            transition: transform 350ms ease;
+
+            &:active {
+                transform: rotate(360deg);
+            }
+        }
     }
 
     &.extended {
