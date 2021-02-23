@@ -89,7 +89,7 @@ const router = () => {
                 `<h1>Error</h1>
                 <p>The requested page cannot be found.</p>
                 <a href="#/guide/quickstart" class="btn">return to home</a>`;
-                main.classList.remove('loading');
+                content.classList.remove('loading');
             }
         }     
     }
