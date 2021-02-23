@@ -4,6 +4,8 @@ var gl = {
     "_lst": "gl-css-theme",
     "_pan": document.querySelector('aside.panel'),
 
+    initialised: {},
+
     "appendThemeToBody": function(x) {
         function rd() {
             gl._b.classList.remove('dark')
@@ -43,7 +45,8 @@ var gl = {
         // drawer
 
         var _d_t = document.querySelector('.js-drawer-trigger')
-        if(_d_t) {
+        if(_d_t && !this.initialised._d_t) {
+            this.initialised._d_t = true
             _d_t.addEventListener('click', () => {
                 if(window.innerWidth < 600) {
                     document.querySelector('aside.drawer.modal').classList.toggle('open')
@@ -54,14 +57,16 @@ var gl = {
         }
 
         var _d_c = document.querySelector('.js-drawer-closable')
-        if(_d_c) {
+        if(_d_c && !this.initialised._d_c) {
+            this.initialised._d_c = true
             _d_c.addEventListener('click', () => {
                 document.querySelector('aside.drawer.modal').classList.remove('open')
             })
         }
 
         var _d_is = document.querySelectorAll('.drawer .item')
-        if(_d_is) {
+        if(_d_is && !this.initialised._d_is) {
+            this.initialised._d_is = true
             _d_is.forEach(a => {
                 a.addEventListener('click', e => {
                     document.querySelectorAll('.drawer .item').forEach(i => {
@@ -107,8 +112,7 @@ var gl = {
                     id = a.dataset.modal
                 }
                 if(id) {
-                    document.getElementById(id).classList.add('open')
-                    document.querySelector('#' + id + ' .content').setAttribute('tabindex', 0)
+                    gl.openModal(id);
                 }
             })
         })
@@ -129,7 +133,15 @@ var gl = {
         // loader
 
         document.querySelectorAll('.js-circular-loader').forEach(l => {
-            l.innerHTML += '<svg class="loader" width="42" height="42" xmlns="http://www.w3.org/2000/svg"><g><ellipse ry="16" rx="16" cy="21" cx="21" stroke-width="4" fill="none"/></g></svg>'
+            if(!l.classList.contains('initialised')) {
+                l.innerHTML += 
+                `<svg class="loader" width="42" height="42" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <ellipse ry="16" rx="16" cy="21" cx="21" stroke-width="4" fill="none"/>
+                    </g>
+                </svg>`
+            }
+            l.classList.add('initialised')
         })
 
         // panel
@@ -181,6 +193,12 @@ var gl = {
         })
     },
 
+    "openModal": function(id) {
+        document.getElementById(id).classList.add('open')
+        document.querySelector('#' + id + ' .content').setAttribute('tabindex', 0)
+        gl._b.style.overflow = 'hidden'
+    },
+
     "closeModals": function() {
         document.querySelectorAll('.js-modal.open').forEach(m => {
             m.removeEventListener('click', gl.stopPropagation)
@@ -190,6 +208,9 @@ var gl = {
         document.querySelectorAll('.js-modal .content').forEach(c => {
             c.setAttribute('tabindex', -1)
         })
+        setTimeout(() => {
+            gl._b.style.overflow = 'initial'
+        }, 150);
     },
 
     "openPanel": function(e, open = true) {

@@ -7,68 +7,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gl css</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.css">
-    <script defer src="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="build/gl.css">
+    <script defer src="build/gl.js"></script>
+
+    <style>
+        #c {
+            padding: 24px 0px;
+        }
+        #c>pre {
+            margin-bottom: 0;
+        }
+        #c>pre+p {
+            margin-top: 28px;
+        }
+        #c>pre code.language-html, .snippet {
+            border: 1px solid rgb(150 150 150 / 50%);
+        }
+        #c>pre code.language-html {
+            max-height: 250px;
+            border-bottom: none;
+        }
+        #c>h1, #c>h2 {
+            font-family: var(--font-special);
+        }
+        #c>h1, #c>h2, #c>h3, #c>h4, #c>h5, #c>h6, #c>p {
+            margin: 0px 24px;
+            padding: 8px 0 12px 0;
+        }
+        #c>a {
+            margin: 0 24px;
+        }
+        .snippet {
+            padding: 16px 32px;
+            margin-bottom: 32px;
+            border-top: none;
+        }
+        p code {
+            background-color: rgb(150 150 150 / 20%);
+            border-radius: 4px;
+            padding: 2px 8px;
+        }
+        main {
+            padding: 24px;
+            box-sizing: border-box;
+            min-height: calc(100vh - 64px);
+        }
+        body:not(.dark) main {
+            background-color: #E8EAED;
+        }
+        @media (max-width: 599px) {
+            main {
+                padding: 4px;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body data-theme="auto">
 
-    <header class="top-app-bar fixed"><div class="wrapper"><div class="left"><button class="btn icon ripple js-drawer-trigger" icon="menu"></button><span class="brand">gl css</span></div><div class="right"><div class="js-circular-loader" id="router-loader"></div></div></div></header><aside class="drawer"></aside><div class="drawer-backdrop js-drawer-closable"></div><main style="padding:16px;min-height:90vh"></main>
+    <header class="top-app-bar fixed"><div class="wrapper"><div class="left"><button class="btn icon ripple js-drawer-trigger" icon="menu"></button><span class="brand">gl css</span></div><div class="right"><div class="js-circular-loader" id="router-loader"></div></div></div></header><aside class="drawer elevated small-tabs"></aside><div class="drawer-backdrop js-drawer-closable"></div><main><div class="card elevated"><div id="c"></div></div></main>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/vs2015.min.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
     <script>
-    const routes = [
-        { path: '/guide/quickstart', icon: 'get_app', label: 'Quickstart' },
-        { path: '/components/lists', icon: 'list', label: 'Lists' },
-    ]
-
-    const main = document.querySelector('main');
-    const drawer = document.querySelector('aside.drawer');
-    const loader = document.getElementById('router-loader');
-    const parseLocation = () => location.hash.slice(1).toLowerCase() || '/';
-
-    const renderDrawer = (path = '/') => {
-        var drawerDom = '';
-        routes.forEach(r => {
-            drawerDom += 
-            `<a href="#${r.path}">
-                <div id="item-guide-quickstart" role="button" class="item ${path == r.path ? 'active' : ''}">
-                    <i class="material-icons">${r.icon}</i>
-                    <span>${r.label}</span>
-                </div>
-            </a>`;
-        })
-        drawer.innerHTML = drawerDom;
+    const routes = {
+        guide: [
+            { path: '/guide/quickstart', icon: 'get_app', label: 'Quickstart', date: 20210220 },
+        ],
+        themes: [
+            { path: '/theme/darkmode', icon: 'brightness_4', label: 'Dark mode', date: 20210223 },
+        ],
+        components: [
+            { path: '/components/buttons', icon: 'add_box', label: 'Buttons', date: 20210223 },
+            { path: '/components/lists', icon: 'list', label: 'Lists', date: 20210220 },
+            { path: '/components/menus', icon: 'more_vert', label: 'Menus', date: 20210223 },
+            { path: '/components/modals', icon: 'launch', label: 'Modals', date: 20210223 },
+        ],
     }
-    
-    const router = () => {
-        const path = parseLocation();
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function (data) {
-            if(xhr.readyState === XMLHttpRequest.DONE) {
-                var status = xhr.status;
-                loader.style.display = 'none';
-                if (status === 0 || (status >= 200 && status < 400)) {
-                    main.innerHTML = marked(data.srcElement.responseText);
-                    main.classList.remove('loading');
-                    renderDrawer(path);
-                    document.querySelectorAll('pre code').forEach(c => {
-                        hljs.highlightBlock(c);
-                    });
-                } else {
-                    main.innerHTML = "<h1>Error ...</h1>"
-                }
-            }     
-        }
-        xhr.open('GET', `docs${path}.md`);
-        xhr.send();
-        loader.style.display = 'block'; main.innerHTML = ''; main.classList.add('loading');
-    };
-
-    window.addEventListener('hashchange', router);
-    window.addEventListener('load', router);
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="docs/assets/highlightjs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js"></script>
+    <script src="docs/assets/app.js"></script>
 
 </body></html>

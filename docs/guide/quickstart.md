@@ -1,6 +1,6 @@
 # CDN
 
-```html
+```xml
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.css">
 <script defer src="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.js"></script>
 ```

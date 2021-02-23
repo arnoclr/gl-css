@@ -17,6 +17,16 @@ aside.drawer {
         &.small~main {
             margin-left: 80px;
         }
+
+        &.small-tabs {
+            &~main {
+                margin-left: 250px;
+            }
+    
+            &.small~main {
+                margin-left: 72px;
+            }
+        }
     }
 }
 
@@ -89,6 +99,29 @@ aside.drawer {
 
     @include large-item();
 
+    a {
+        text-decoration: none;
+    }
+
+    hr {
+        margin: 16px 0;
+    }
+
+    small {
+        opacity: 1;
+        display: block;
+        margin-left: 22px;
+        margin-bottom: 8px;
+        font-weight: 500;
+        font-family: var(--font-text);
+        font-size: 13px;
+        transition: opacity 150ms ease;
+    }
+
+    &.elevated {
+        box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    }
+
     &.small-tabs {
         .item {
             height: 40px;
@@ -114,6 +147,10 @@ aside.drawer {
 
     &.open {
         width: 280px;
+
+        &.small-tabs {
+            width: 250px;
+        }
     }
 
     &.modal {
@@ -151,8 +188,14 @@ aside.drawer {
 
         @include small-item();
 
-        &:not(:hover)::-webkit-scrollbar {
-            display: none;
+        &:not(:hover) {
+            small {
+                opacity: 0;
+            }
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
         }
 
         &.small-tabs {
