@@ -3,7 +3,7 @@
 
 Google Material Design stylesheet for html apps. The project brings multiple components easy to use, to quickly create responsive and readable interfaces.
 
-Discover at : https://aryqs-ipsum.github.io/gl-css/
+Documentation : https://gl-css.vercel.app/
 
 # CDN
 
