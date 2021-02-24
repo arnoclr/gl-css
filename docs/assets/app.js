@@ -86,7 +86,7 @@ const router = () => {
                 });
             } else {
                 content.innerHTML = 
-                `<h1>Error</h1>
+                `<h1 style="color:var(--color-error)">Error</h1>
                 <p>The requested page cannot be found.</p>
                 <a href="#/guide/quickstart" class="btn">return to home</a>`;
                 content.classList.remove('loading');

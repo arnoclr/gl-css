@@ -14,10 +14,11 @@ $element-bottom-margin: ($gutter-width*2)/3 !default;
     --color-background-alt: #fafafa;
     --color-background-text: #212121;
     --color-background-text-alt: #5f6368;
+    --color-error: #b00020;
 
-    --small-radius: 4px;
-    --medium-radius: 8px;
-    --large-radius: 16px;
+    --small-radius: 2px;
+    --medium-radius: 4px;
+    --large-radius: 8px;
 
     --font-icons: "Material Icons";
     --font-special: "Google Sans", "Roboto", Arial, Helvetica, sans-serif;
