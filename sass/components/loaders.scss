@@ -43,6 +43,12 @@ $background: rgb(150 150 150 / 15%);
     }
 }
 
+header.top-app-bar .linear-loader {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+}
+
 @keyframes linear-indeterminate {
     0% {
         width: 0%;

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gl css</title>
+    <link rel="shortcut icon" href="/docs/assets/favicon.png" type="image/png">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
@@ -32,7 +33,7 @@
         #c>h1, #c>h2 {
             font-family: var(--font-special);
         }
-        #c>h1, #c>h2, #c>h3, #c>h4, #c>h5, #c>h6, #c>p {
+        #c>h1, #c>h2, #c>h3, #c>h4, #c>h5, #c>h6, #c>p, #c>table {
             margin: 0px 24px;
             padding: 8px 0 12px 0;
         }
@@ -44,7 +45,7 @@
             margin-bottom: 32px;
             border-top: none;
         }
-        p code {
+        p code, table code {
             background-color: rgb(150 150 150 / 20%);
             border-radius: 4px;
             padding: 2px 8px;
@@ -61,13 +62,16 @@
             main {
                 padding: 4px;
             }
+            .snippet {
+                padding: 16px;
+            }
         }
     </style>
 </head>
 
 <body data-theme="auto">
 
-    <header class="top-app-bar fixed"><div class="wrapper"><div class="left"><button class="btn icon ripple js-drawer-trigger" icon="menu"></button><span class="brand">gl css</span></div><div class="right"><div class="js-circular-loader" id="router-loader"></div></div></div></header><aside class="drawer elevated small-tabs"></aside><div class="drawer-backdrop js-drawer-closable"></div><main><div class="card elevated"><div id="c"></div></div></main>
+    <header class="top-app-bar fixed"><div class="wrapper"><div class="left"><button class="btn icon ripple js-drawer-trigger" icon="menu"></button><img src="docs/assets/favicon.png"><span class="brand">gl css</span></div><div class="right"></div></div></div><div class="linear-loader" id="router-loader"><div class="indeterminate"></div></div></header></div><aside class="drawer elevated small-tabs"></aside><div class="drawer-backdrop js-drawer-closable"></div><main><div class="card elevated"><div id="c"></div></div></main>
 
     <script>
     const routes = {
@@ -78,10 +82,15 @@
             { path: '/theme/darkmode', icon: 'brightness_4', label: 'Dark mode', date: 20210223 },
         ],
         components: [
+            { path: '/components/boxes', icon: 'check_box_outline_blank', label: 'Boxes', date: 20210225 },
             { path: '/components/buttons', icon: 'add_box', label: 'Buttons', date: 20210223 },
             { path: '/components/lists', icon: 'list', label: 'Lists', date: 20210220 },
+            { path: '/components/loaders', icon: 'autorenew', label: 'Loaders', date: 20210225 },
             { path: '/components/menus', icon: 'more_vert', label: 'Menus', date: 20210223 },
             { path: '/components/modals', icon: 'launch', label: 'Modals', date: 20210223 },
+        ],
+        utils: [
+            { path: '/utils/classes', icon: 'accessibility', label: 'Classes', date: 20210225 },
         ],
     }
     </script>

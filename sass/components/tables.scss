@@ -1,0 +1,41 @@
+$border-table: rgb(150 150 150 / 20%);
+
+table {
+    box-shadow: inset 0px 0px 0px 1px $border-table;
+    border-radius: var(--medium-radius);
+    border-collapse: collapse;
+
+    &.elevated {
+        border: none;
+        box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    }
+
+    thead {
+        tr {
+            height: 56px;
+
+            th {
+                font-family: var(--font-text);
+                font-size: .875rem;
+                font-weight: 500;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            height: 52px;
+            border-top: 1px solid $border-table;
+
+            td {
+                font-family: var(--font-text);
+                font-size: .875rem;
+                font-weight: 400;
+            }
+        }
+    }
+
+    td, th {
+        padding: 0 16px;
+    }
+}

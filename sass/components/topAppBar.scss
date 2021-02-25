@@ -35,6 +35,12 @@ header {
                     display: inline-flex;
                 }
 
+                img {
+                    height: 36px;
+                    vertical-align: text-bottom;
+                    margin-left: 8px;
+                }
+
                 span.brand, span.text {
                     color: var(--color-background-text-alt);
                     font-family: var(--font-special);

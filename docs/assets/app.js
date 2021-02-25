@@ -76,7 +76,7 @@ const router = () => {
     xhr.onreadystatechange = function (data) {
         if(xhr.readyState === XMLHttpRequest.DONE) {
             var status = xhr.status;
-            loader.style.display = 'none';
+            loader.classList.add('hidden');
             if (status === 0 || (status >= 200 && status < 400)) {
                 content.innerHTML = parseMarkdown(data.srcElement.responseText);
                 content.classList.remove('loading');
@@ -95,7 +95,7 @@ const router = () => {
     }
     xhr.open('GET', `docs${path}.md`);
     xhr.send();
-    loader.style.display = 'block'; content.classList.add('loading');
+    loader.classList.remove('hidden'); content.classList.add('loading');
 };
 
 window.addEventListener('hashchange', router);
