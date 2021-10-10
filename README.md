@@ -1,3 +1,6 @@
+<p align="center"><img width="128" height="128" src="./docs/assets/logo.svg"></p>
+<h1 align="center">Google Like css</h1>
+
 ![GitHub file size in bytes](https://img.shields.io/github/size/aryqs-ipsum/gl-css/build/gl.css?label=gl.css)
 ![GitHub file size in bytes](https://img.shields.io/github/size/aryqs-ipsum/gl-css/build/gl.js?label=gl.js)
 
@@ -51,4 +54,6 @@ You can find more examples at https://codepen.io/collection/XkKWVv
 
 # Commands
 
-`sass --watch sass/gl.scss:build/gl.css --style compressed`
+```sh
+sass --watch sass/gl.scss:build/gl.css --style compressed
+```
