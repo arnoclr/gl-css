@@ -1,8 +1,8 @@
 <p align="center"><img width="128" height="128" src="./docs/assets/logo.svg"></p>
 <h1 align="center">Google Like css</h1>
 
-![GitHub file size in bytes](https://img.shields.io/github/size/aryqs-ipsum/gl-css/build/gl.css?label=gl.css)
-![GitHub file size in bytes](https://img.shields.io/github/size/aryqs-ipsum/gl-css/build/gl.js?label=gl.js)
+![GitHub file size in bytes](https://img.shields.io/github/size/arnoclr/gl-css/build/gl.css?label=gl.css)
+![GitHub file size in bytes](https://img.shields.io/github/size/arnoclr/gl-css/build/gl.js?label=gl.js)
 
 Google Material Design stylesheet for html apps. The project brings multiple components easy to use, to quickly create responsive and readable interfaces.
 
@@ -11,8 +11,8 @@ Documentation : https://gl-css.vercel.app/
 # CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.css">
-<script defer src="https://cdn.jsdelivr.net/gh/Aryqs-Ipsum/gl-css/build/gl.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/arnoclr/gl-css/build/gl.min.css">
+<script defer src="https://cdn.jsdelivr.net/gh/arnoclr/gl-css/build/gl.min.js"></script>
 ```
 
 CDN link is auto-updated, if you want to keep the same version and change it manually, you can download the files from the `/build` folder.
