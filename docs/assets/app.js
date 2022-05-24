@@ -66,7 +66,7 @@ const snippetCode = (markdown) => {
 
 const parseMarkdown = (markdown) => {
     snippetCode(markdown);
-    return marked(markdown);
+    return marked.parse(markdown);
 
 }
 
